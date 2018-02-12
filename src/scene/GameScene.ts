@@ -14,6 +14,8 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	// 游戏结束面板
 	public overPanel: eui.Group;
 
+	//连续中央位置次数
+	private centerCount = 0;
 	// 游戏中得分
 	private score = 0;
 	// 游戏中得分面板;
@@ -43,6 +45,9 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	private leftOrigin = { "x": 180, "y": 350 };
 	// 右侧跳跃点
 	private rightOrigin = { "x": 580, "y": 350 };
+
+	//上一个盒子
+	private lastBlock: eui.Image;
 
 	// 当前的盒子
 	private currentBlock: eui.Image;
@@ -139,6 +144,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			blockNode.x = this.currentBlock.x - distance;
 			blockNode.y = this.currentBlock.y - distance * this.arrayRatio;
 		}
+		this.lastBlock = this.currentBlock;
 		this.currentBlock = blockNode;
 	}
 
@@ -189,10 +195,10 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		this.player.anchorOffsetY = this.player.height / 2;
 
 		egret.Tween.get(this.player).to({ rotation: this.direction > 0 ? -60 : 60 }, 250).call(() => {
-			
+
 		}).call(() => {
 			egret.Tween.get(this.player).to({ rotation: this.direction > 0 ? 60 : -60 }, 200).call(() => {
-				
+
 			}).call(() => {
 				egret.Tween.get(this.player).to({ rotation: 0 }, 50).call(() => {
 					this.player.rotation = 0;
@@ -205,48 +211,59 @@ class GameScene extends eui.Component implements eui.UIComponent {
 
 	}
 	private judgeResult() {
-		// 根据this.jumpDistance来判断跳跃是否成功
-		if (Math.pow(this.currentBlock.x - this.player.x, 2) + Math.pow(this.currentBlock.y - this.player.y, 2) <= 70 * 70) {
-			// 更新积分
-			this.score++;
-			this.scoreLabel.text = this.score.toString();
-			// 随机下一个方块出现的位置
-			this.direction = Math.random() > 0.5 ? 1 : -1;
-			// 小人是否要换方向
-			this.player.scaleX = this.direction == 1 ? 1 : -1;
-			// 当前方块要移动到相应跳跃点
-			var blockX, blockY;
-			blockX = this.direction > 0 ? this.leftOrigin.x : this.width - 135;
-			blockY = this.height / 2 + this.currentBlock.height;
-			// 小人要移动到的点.
-			var playerX, PlayerY;
-			playerX = this.player.x - (this.currentBlock.x - blockX);
-			PlayerY = this.player.y - (this.currentBlock.y - blockY);
+		if (Math.pow(this.lastBlock.x - this.player.x, 2) + Math.pow(this.lastBlock.y - this.player.y, 2) >= 72 * 72) {
+			// 根据this.jumpDistance来判断跳跃是否成功
+			if (Math.pow(this.currentBlock.x - this.player.x, 2) + Math.pow(this.currentBlock.y - this.player.y, 2) <= 72 * 72) {
+				// 更新积分
+				if (Math.pow(this.currentBlock.x - this.player.x, 2) + Math.pow(this.currentBlock.y - this.player.y, 2) <= 10 * 10) {
+					this.centerCount++;
+					this.score += 2 * this.centerCount;
+				} else {
+					this.centerCount = 0;
+					this.score++;
+				}
+				this.scoreLabel.text = this.score.toString();
+				// 随机下一个方块出现的位置
+				this.direction = Math.random() > 0.5 ? 1 : -1;
+				// 小人是否要换方向
+				this.player.scaleX = this.direction == 1 ? 1 : -1;
+				// 当前方块要移动到相应跳跃点
+				var blockX, blockY;
+				blockX = this.direction > 0 ? this.leftOrigin.x : this.width - 135;
+				blockY = this.height / 2 + this.currentBlock.height;
+				// 小人要移动到的点.
+				var playerX, PlayerY;
+				playerX = this.player.x - (this.currentBlock.x - blockX);
+				PlayerY = this.player.y - (this.currentBlock.y - blockY);
 
-			// x/y轴分别移动的距离
-			egret.Tween.get(this.currentBlock).to({
-				x: blockX,
-				y: blockY
-			}, 1000)
-			// 更新页面
-			this.update(this.currentBlock.x - blockX, this.currentBlock.y - blockY);
-			// 更新小人的位置
-			egret.Tween.get(this.player).to({
-				x: playerX,
-				y: PlayerY
-			}, 1000).call(() => {
-				// 开始创建下一个方块
-				this.addBlock();
-				// 让屏幕重新可点;
-				this.blockPanel.touchEnabled = true;
-			})
-			// console.log('x' + x);
-			console.log(this.currentBlock.x);
+				// x/y轴分别移动的距离
+				egret.Tween.get(this.currentBlock).to({
+					x: blockX,
+					y: blockY
+				}, 1000)
+				// 更新页面
+				this.update(this.currentBlock.x - blockX, this.currentBlock.y - blockY);
+				// 更新小人的位置
+				egret.Tween.get(this.player).to({
+					x: playerX,
+					y: PlayerY
+				}, 1000).call(() => {
+					// 开始创建下一个方块
+					this.addBlock();
+					// 让屏幕重新可点;
+					this.blockPanel.touchEnabled = true;
+				})
+				// console.log('x' + x);
+				console.log(this.currentBlock.x);
+			} else {
+				// 失败,弹出重新开始的panel
+				console.log('游戏失败!');
+				this.overPanel.visible = true;
+				this.overScoreLabel.text = this.score.toString();
+			}
 		} else {
-			// 失败,弹出重新开始的panel
-			console.log('游戏失败!')
-			this.overPanel.visible = true;
-			this.overScoreLabel.text = this.score.toString();
+			// 让屏幕重新可点;
+			this.blockPanel.touchEnabled = true;
 		}
 
 
