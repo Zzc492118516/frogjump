@@ -26,6 +26,8 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	public overScoreLabel: eui.Label;
 	// 再来一局
 	public restart: eui.Button;
+	// 返回菜单
+	public gotoMainBtn: eui.Button;
 
 	// tanθ角度值
 	public arrayRatio: number = 0.556047197640118;
@@ -97,6 +99,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		this.blockPanel.addEventListener(egret.TouchEvent.TOUCH_END, this.onKeyUp, this);
 		// 绑定结束按钮
 		this.restart.addEventListener(egret.TouchEvent.TOUCH_TAP, this.restartHandler, this);
+		this.gotoMainBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.returnMain, this);
 		// 设置玩家的锚点
 		// 设置锚点
 		this.player.anchorOffsetX = this.player.width / 2;
@@ -342,5 +345,11 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		this.reset();
 		// 游戏场景可点
 		this.blockPanel.touchEnabled = true;
+	}
+	private returnMain() {
+		// 重置属性
+		this.restartHandler();
+		// 返回菜单
+		SceneManger.getInstance().changeScene('menuScene');
 	}
 }

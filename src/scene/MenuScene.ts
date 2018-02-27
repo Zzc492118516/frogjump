@@ -70,7 +70,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 
 	}
 	private tapCoin(){
-
+		SceneManger.getInstance().changeScene('shopScene');
 	}
 	private tapClose(){
 		// 切换状态
