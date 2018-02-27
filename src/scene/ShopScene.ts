@@ -32,6 +32,8 @@ class ShopScene extends eui.Component implements  eui.UIComponent {
 	private tapGotoMainBtn(){
 		// 切换场景
 		SceneManger.getInstance().changeScene('menuScene');
+		// 并切换买金币状态
+		this.skin.currentState = "coin";
 	}
 	private tapCoin(){
 		// 切换状态
