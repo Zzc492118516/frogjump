@@ -1,12 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="MenuSceneSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+<e:Skin class="MenuSceneSkin" width="750" height="1334" currentState="main" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  states="userInfo,rank,handbook,main" >
 	<w:Config id="160e3287509" ></w:Config>
-	<e:Button id="startBtn" label="" horizontalCenter="0" bottom="150">
+	<e:Image id="bg" left="0" top="0" bottom="0" right="0" touchEnabled="true" x="0" y="0" scaleX="1" scaleY="1" source="bg_png"/>
+	<e:Button id="startBtn" label="" horizontalCenter="0" bottom="224">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="start_btn_png" source.down="start_btn_png"/>
+			<e:Image width="100%" height="100%" source="ic_start_png" source.down="ic_start_png"/>
 			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
+	<e:Button id="homeBtn" label="" x="120" y="1142">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="ic_home_png" source.down="ic_home_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="picturesBtn" label="" x="252" y="1142">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="ic_pictures_png" source.down="ic_pictures_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="rankBtn" label="" x="386.5" y="1142">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="ic_rank_png" source.down="ic_rank_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="shopBtn" label="" x="521.5" y="1142">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="ic_shop_png" source.down="ic_shop_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="userBtn" label="" x="34" y="19.5">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="ic_user_png" source.down="ic_user_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="strenthBtn" label="" x="271.5" y="15">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="ic_strenthPoint_png" source.down="ic_strenthPoint_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="coinBtn" label="" x="509.5" y="15">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="ic_coin_png" source.down="ic_coin_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Image width="526" height="150" x="112" y="198" source="ic_name_png" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image width="750" height="319" x="0" y="457" source="ic_mainPic_png" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Group id="userInfoGroup" width="750" height="1334" x="0" y="0" visible.rank="false" visible.handbook="false" visible.main="false">
+		<e:Rect width="750" height="1334" x="0" y="0" strokeAlpha="1" fillAlpha="0.5"/>
+		<e:Image width="644" height="422" x="53" y="405.5" anchorOffsetX="0" anchorOffsetY="0" source="bg_dialog_png" fillMode="scale" scale9Grid="46,34,555,349"/>
+		<e:Button id="closeBtn1" label="" x="629.5" y="423">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="ic_close_png" source.down="ic_close_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Group id="rankGroup" width="750" height="1334" x="0" y="0" visible.userInfo="false" visible.handbook="false" visible.main="false">
+		<e:Rect width="750" height="1334" x="0" y="0" strokeAlpha="1" fillAlpha="0.5" scaleX="1" scaleY="1"/>
+		<e:Image width="630" height="1080" x="60" y="120" anchorOffsetX="0" anchorOffsetY="0" source="ic_rankBg_png"/>
+		<e:Button id="closeBtn3" label="" x="629.5" y="145.5">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="ic_close_png" source.down="ic_close_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="188" y="1068.5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="ic_yourRank_png" source.down="ic_yourRank_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label text="您的排名未上榜" x="271.5" y="1095" textAlign="center"/>
+		<e:Button label="分数排行" x="168" y="149">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="正常状态资源名"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="家园排行" x="461.5" y="149">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="正常状态资源名"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label text="|" x="368.5" y="149"/>
+		<e:Rect width="110" height="4" x="174" y="185" fillColor="0xffffff" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:List id="rankList" width="532" height="795" x="111" y="234" anchorOffsetX="0" anchorOffsetY="0" itemRendererSkinName="RankOneSkin"/>
+	</e:Group>
+	<e:Group id="handbookGroup" width="750" height="1334" x="0" y="0" visible.userInfo="false" visible.rank="false" visible.main="false">
+		<e:Rect width="750" height="1334" x="0" y="0" strokeAlpha="1" fillAlpha="0.5" scaleX="1" scaleY="1"/>
+		<e:Image width="630" height="1080" x="57.5" y="120" source="bg_dialog_png" scale9Grid="80,52,484,318"/>
+		<e:Image width="603" height="328" x="70" y="141.5" source="ic_blank_png"/>
+		<e:Button id="closeBtn2" label="" x="613" y="139.5">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="ic_close_png" source.down="ic_close_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Image width="603" height="328" x="71" y="498.5" source="ic_blank_png"/>
+		<e:Image width="603" height="328" x="70" y="853" source="ic_blank_png"/>
+		<e:Button label="" x="70" y="627" width="69" height="80">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="ic_left_png" source.down="ic_left_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="610" y="628" width="69" height="80">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="ic_right_png" source.down="ic_right_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
 </e:Skin>

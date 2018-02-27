@@ -20,6 +20,7 @@
 		"bin-debug/scene/GameScene.js",
 		"bin-debug/scene/MenuScene.js",
 		"bin-debug/scene/SceneManager.js",
+		"bin-debug/scene/ShopScene.js",
 		"bin-debug/stage/Player.js"
 	]
 }

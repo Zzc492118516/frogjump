@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,back_btn_png,block1_png,block2_png,block3_png,finger_png,jump_mp3,piece_png,push_mp3,relive_png,restart_btn_png,setting_bg_jpg,setting_btn_png,setting_off_png,setting_on_png,start_btn_png,streak_png,block-1_png,block-2_png,block-3_png,block-4_png,flog-default_png,bg_png",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,back_btn_png,block1_png,block2_png,block3_png,finger_png,jump_mp3,piece_png,push_mp3,relive_png,restart_btn_png,setting_bg_jpg,setting_btn_png,setting_off_png,setting_on_png,start_btn_png,streak_png,block-1_png,block-2_png,block-3_png,block-4_png,flog-default_png,bg_png,ic_coin_png,ic_home_png,ic_mainPic_png,ic_name_png,ic_pictures_png,ic_rank_png,ic_shop_png,ic_start_png,ic_strenthPoint_png,ic_user_png,bg_dialog_png,ic_close_png,ic_playAgain_png,ic_goHome_png,ic_scoreDialog_png,ic_rankBg_png,ic_yourRank_png,bg_coin_png,ic_1_png,ic_6_png,ic_30_png,ic_60_png,ic_buy_png,ic_coin_shop_png,ic_menu_png,ic_tag_select_png,ic_tag_png,ic_blank_png,ic_left_png,ic_right_png,handbook_1_jpg,handbook_2_jpg,handbook_3_jpg,handbook_4_jpg,handbook_5_jpg,handbook_6_jpg,handbook_7_jpg,handbook_8_jpg,handbook_9_jpg,handbook_10_jpg,handbook_11_jpg,handbook_12_jpg,handbook_13_jpg,handbook_14_jpg,handbook_15_jpg,handbook_16_jpg,handbook_17_jpg,handbook_18_jpg,bg_prop_png",
 			"name": "preload"
 		}
 	],
@@ -245,6 +245,251 @@
 			"name": "bg_png",
 			"type": "image",
 			"url": "assets/bg.png"
+		},
+		{
+			"name": "ic_coin_png",
+			"type": "image",
+			"url": "assets/Main/ic_coin.png"
+		},
+		{
+			"name": "ic_home_png",
+			"type": "image",
+			"url": "assets/Main/ic_home.png"
+		},
+		{
+			"name": "ic_mainPic_png",
+			"type": "image",
+			"url": "assets/Main/ic_mainPic.png"
+		},
+		{
+			"name": "ic_name_png",
+			"type": "image",
+			"url": "assets/Main/ic_name.png"
+		},
+		{
+			"name": "ic_pictures_png",
+			"type": "image",
+			"url": "assets/Main/ic_pictures.png"
+		},
+		{
+			"name": "ic_rank_png",
+			"type": "image",
+			"url": "assets/Main/ic_rank.png"
+		},
+		{
+			"name": "ic_shop_png",
+			"type": "image",
+			"url": "assets/Main/ic_shop.png"
+		},
+		{
+			"name": "ic_start_png",
+			"type": "image",
+			"url": "assets/Main/ic_start.png"
+		},
+		{
+			"name": "ic_strenthPoint_png",
+			"type": "image",
+			"url": "assets/Main/ic_strenthPoint.png"
+		},
+		{
+			"name": "ic_user_png",
+			"type": "image",
+			"url": "assets/Main/ic_user.png"
+		},
+		{
+			"name": "bg_dialog_png",
+			"type": "image",
+			"url": "assets/bg_dialog.png"
+		},
+		{
+			"name": "ic_close_png",
+			"type": "image",
+			"url": "assets/ic_close.png"
+		},
+		{
+			"name": "ic_playAgain_png",
+			"type": "image",
+			"url": "assets/ic_playAgain.png"
+		},
+		{
+			"name": "ic_goHome_png",
+			"type": "image",
+			"url": "assets/ic_goHome.png"
+		},
+		{
+			"name": "ic_scoreDialog_png",
+			"type": "image",
+			"url": "assets/ic_scoreDialog.png"
+		},
+		{
+			"name": "ic_rankBg_png",
+			"type": "image",
+			"url": "assets/Rank/ic_rankBg.png"
+		},
+		{
+			"name": "ic_yourRank_png",
+			"type": "image",
+			"url": "assets/Rank/ic_yourRank.png"
+		},
+		{
+			"name": "bg_coin_png",
+			"type": "image",
+			"url": "assets/Shop/bg_coin.png"
+		},
+		{
+			"name": "ic_1_png",
+			"type": "image",
+			"url": "assets/Shop/ic_1.png"
+		},
+		{
+			"name": "ic_6_png",
+			"type": "image",
+			"url": "assets/Shop/ic_6.png"
+		},
+		{
+			"name": "ic_30_png",
+			"type": "image",
+			"url": "assets/Shop/ic_30.png"
+		},
+		{
+			"name": "ic_60_png",
+			"type": "image",
+			"url": "assets/Shop/ic_60.png"
+		},
+		{
+			"name": "ic_buy_png",
+			"type": "image",
+			"url": "assets/Shop/ic_buy.png"
+		},
+		{
+			"name": "ic_coin_shop_png",
+			"type": "image",
+			"url": "assets/Shop/ic_coin_shop.png"
+		},
+		{
+			"name": "ic_menu_png",
+			"type": "image",
+			"url": "assets/Shop/ic_menu.png"
+		},
+		{
+			"name": "ic_tag_select_png",
+			"type": "image",
+			"url": "assets/Shop/ic_tag_select.png"
+		},
+		{
+			"name": "ic_tag_png",
+			"type": "image",
+			"url": "assets/Shop/ic_tag.png"
+		},
+		{
+			"name": "ic_blank_png",
+			"type": "image",
+			"url": "assets/Main/ic_blank.png"
+		},
+		{
+			"name": "ic_left_png",
+			"type": "image",
+			"url": "assets/Main/ic_left.png"
+		},
+		{
+			"name": "ic_right_png",
+			"type": "image",
+			"url": "assets/Main/ic_right.png"
+		},
+		{
+			"name": "handbook_1_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_1.jpg"
+		},
+		{
+			"name": "handbook_2_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_2.jpg"
+		},
+		{
+			"name": "handbook_3_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_3.jpg"
+		},
+		{
+			"name": "handbook_4_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_4.jpg"
+		},
+		{
+			"name": "handbook_5_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_5.jpg"
+		},
+		{
+			"name": "handbook_6_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_6.jpg"
+		},
+		{
+			"name": "handbook_7_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_7.jpg"
+		},
+		{
+			"name": "handbook_8_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_8.jpg"
+		},
+		{
+			"name": "handbook_9_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_9.jpg"
+		},
+		{
+			"name": "handbook_10_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_10.jpg"
+		},
+		{
+			"name": "handbook_11_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_11.jpg"
+		},
+		{
+			"name": "handbook_12_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_12.jpg"
+		},
+		{
+			"name": "handbook_13_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_13.jpg"
+		},
+		{
+			"name": "handbook_14_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_14.jpg"
+		},
+		{
+			"name": "handbook_15_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_15.jpg"
+		},
+		{
+			"name": "handbook_16_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_16.jpg"
+		},
+		{
+			"name": "handbook_17_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_17.jpg"
+		},
+		{
+			"name": "handbook_18_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/handbook_18.jpg"
+		},
+		{
+			"name": "bg_prop_png",
+			"type": "image",
+			"url": "assets/Shop/bg_prop.png"
 		}
 	]
 }

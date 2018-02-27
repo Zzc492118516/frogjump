@@ -15,12 +15,12 @@
 		"eui.ItemRenderer": "resource/eui_skins/ItemRendererSkin.exml",
 		"Menu": "resource/eui_skins/Menu.exml",
 		"GameScene": "resource/scene/GameScene.exml",
-		"MenuScene": "resource/scene/MenuScene.exml"
+		"MenuScene": "resource/scene/MenuScene.exml",
+		"ShopScene": "resource/scene/ShopScene.exml",
+		"RankOneSkin": "resource/item_skins/RankOneSkin.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
-		"resource/scene/GameScene.exml",
-		"resource/scene/MenuScene.exml",
 		"resource/eui_skins/ButtonSkin.exml",
 		"resource/eui_skins/CheckBoxSkin.exml",
 		"resource/eui_skins/HScrollBarSkin.exml",
@@ -33,7 +33,11 @@
 		"resource/eui_skins/TextInputSkin.exml",
 		"resource/eui_skins/ToggleSwitchSkin.exml",
 		"resource/eui_skins/VScrollBarSkin.exml",
-		"resource/eui_skins/VSliderSkin.exml"
+		"resource/eui_skins/VSliderSkin.exml",
+		"resource/item_skins/RankOneSkin.exml",
+		"resource/scene/GameScene.exml",
+		"resource/scene/MenuScene.exml",
+		"resource/scene/ShopScene.exml"
 	],
 	"path": "resource/default.thm.json"
 }

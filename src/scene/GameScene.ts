@@ -11,6 +11,8 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	private minDistance = 220;
 	private maxDistance = 360;
 	private anchorOffset = 100;
+	// 跳跃动画移动间隔
+	private moveInterval = 500;
 	// 游戏结束面板
 	public overPanel: eui.Group;
 
@@ -240,14 +242,14 @@ class GameScene extends eui.Component implements eui.UIComponent {
 				egret.Tween.get(this.currentBlock).to({
 					x: blockX,
 					y: blockY
-				}, 1000)
+				}, this.moveInterval)
 				// 更新页面
 				this.update(this.currentBlock.x - blockX, this.currentBlock.y - blockY);
 				// 更新小人的位置
 				egret.Tween.get(this.player).to({
 					x: playerX,
 					y: PlayerY
-				}, 1000).call(() => {
+				}, this.moveInterval).call(() => {
 					// 开始创建下一个方块
 					this.addBlock();
 					// 让屏幕重新可点;
@@ -295,7 +297,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		// 使用随机背景图
 		let n = Math.floor(Math.random() * this.blockSourceNames.length);
 		blockNode.source = this.blockSourceNames[n];
-		this.blockPanel.addChild(blockNode);
+		this.blockPanel.addChild(blockNode); 
 		// 设置缩放
 		let scale = this.minScale;
 		blockNode.scaleX = blockNode.scaleY = scale;
@@ -325,7 +327,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 				egret.Tween.get(blockNode).to({
 					x: blockNode.x - x,
 					y: blockNode.y - y
-				}, 1000)
+				}, this.moveInterval)
 			}
 		}
 	}
