@@ -66,8 +66,11 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
+	<e:Label id="userNameLabel" text="nidage" x="130" y="43" textAlign="center"/>
+	<e:Label id="strenthTimeLabel" text="99:99" x="368.5" y="43" textAlign="center"/>
+	<e:Label id="coinLabel" text="99999" x="610" y="43" textAlign="left"/>
 	<e:Image width="526" height="150" x="112" y="198" source="ic_name_png" anchorOffsetX="0" anchorOffsetY="0"/>
-	<e:Image width="750" height="319" x="0" y="457" source="ic_mainPic_png" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image width="750" height="319" x="0" y="457" source="ic_mainPic_png" anchorOffsetX="0" anchorOffsetY="0" visible="false"/>
 	<e:Group id="userInfoGroup" width="750" height="1334" x="0" y="0" visible.handbook="false" visible.main="false" visible.scoreRank="false" visible.homeRank="false">
 		<e:Rect width="750" height="1334" x="0" y="0" strokeAlpha="1" fillAlpha="0.5"/>
 		<e:Image width="644" height="422" x="53" y="405.5" anchorOffsetX="0" anchorOffsetY="0" source="bg_dialog_png" fillMode="scale" scale9Grid="46,34,555,349"/>
@@ -113,6 +116,8 @@
 		<e:Rect width="750" height="1334" x="0" y="0" strokeAlpha="1" fillAlpha="0.5" scaleX="1" scaleY="1"/>
 		<e:Image width="630" height="1080" x="57.5" y="120" source="bg_dialog_png" scale9Grid="80,52,484,318"/>
 		<e:Image id="picture1" width="603" height="328" x="70" y="141.5" source="ic_blank_png"/>
+		<e:Image id="picture2" width="603" height="328" x="71" y="498.5" source="ic_blank_png"/>
+		<e:Image id="picture3" width="603" height="328" x="70" y="853" source="ic_blank_png"/>
 		<e:Button id="closeBtn2" label="" x="613" y="139.5">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
@@ -121,8 +126,6 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Image id="picture2" width="603" height="328" x="71" y="498.5" source="ic_blank_png"/>
-		<e:Image id="picture3" width="603" height="328" x="70" y="853" source="ic_blank_png"/>
 		<e:Button id="pageLeftBtn" label="" x="70" y="627" width="69" height="80">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">

@@ -23,6 +23,11 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	public scoreRankLabel:eui.Label;
 	public homeRankLabel:eui.Label;
 
+	// 上方文字标签
+	public userNameLabel:eui.Label;
+	public strenthTimeLabel:eui.Label;
+	public coinLabel:eui.Label;
+
 	// 图鉴的图片
 	public picture1:eui.Image;
 	public picture2:eui.Image;
@@ -51,6 +56,17 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		this.init();
 	}
 	private init(){
+		var data = RES.getRes("frogBg_json");
+		var tex = RES.getRes("frogBg_png");
+		var mcf:egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data,tex);
+		var mc:egret.MovieClip = new egret.MovieClip(mcf.generateMovieClipData());
+		mc.x = 0;
+		mc.y = 427;
+		mc.scaleX = 2;
+		mc.scaleY = 2;
+		this.addChildAt(mc,1);
+		mc.gotoAndPlay(0,-1);
+
 		// 设置监听
 		this.startBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapHandler,this);
 		this.homeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapHome,this);
@@ -67,12 +83,20 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		this.closeBtn3.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapClose,this);
 		this.scoreRankLabel.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapScoreRank,this);
 		this.homeRankLabel.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapHomeRank,this);
+		this.userNameLabel.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapUser,this);
+		this.strenthTimeLabel.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapStrenth,this);
+		this.coinLabel.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapCoin,this);
 
 		// 设置参数
-		this.picturesMaxPaper = 6;
 		this.picturesName = ["handbook_1_jpg","handbook_2_jpg","handbook_3_jpg","handbook_4_jpg","handbook_5_jpg","handbook_6_jpg",
 		"handbook_7_jpg","handbook_8_jpg","handbook_9_jpg","handbook_10_jpg","handbook_11_jpg","handbook_12_jpg","handbook_13_jpg",
 		"handbook_14_jpg","handbook_15_jpg","handbook_16_jpg","handbook_17_jpg","handbook_18_jpg"];
+		this.picturesMaxPaper = this.picturesName.length / 3;
+
+		// 图鉴添加遮罩
+		this.addMaskShape(this.picture1);
+		this.addMaskShape(this.picture2);
+		this.addMaskShape(this.picture3);
 	}
 	private tapHandler(){
 		// 切换场景
@@ -85,7 +109,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		// 设置页数为1
 		this.picturesPage = 1;
 		this.pageLeftBtn.visible = false;
-		this.pageRightBtn.visible = true;
+		this.pageRightBtn.visible = this.picturesMaxPaper == 1 ? false : true;
 		this.refreshPictrues();
 		// 切换状态
 		this.skin.currentState = "handbook";
@@ -145,4 +169,13 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 			this.picture3.visible = false;
 		}
 	}
+	 private addMaskShape(image: eui.Image){
+        var maskShape = new egret.Shape();
+        maskShape.graphics.beginFill(1,1);
+        maskShape.graphics.drawRoundRect(image.x,image.y,image.width,image.height,40,40);
+        maskShape.graphics.endFill();
+
+        this.addChild(maskShape);
+        image.mask = maskShape;
+    }
 }
