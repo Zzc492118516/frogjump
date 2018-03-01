@@ -2,10 +2,19 @@ class ShopScene extends eui.Component implements  eui.UIComponent {
 	// 开始按钮
 	public gotoMainBtn:eui.Button;
 
+	// 页面跳转按钮
 	public coinBtn:eui.Button;
 	public propBtn:eui.Button;
 	public coinLabel:eui.Label;
 	public propLabel:eui.Label;
+
+	// 购买按钮
+	public buyStrenthBtn:eui.Button;
+	public buyResurgenceBtn:eui.Button;
+	public rmb1Btn:eui.Button;
+	public rmb6Btn:eui.Button;
+	public rmb30Btn:eui.Button;
+	public rmb60Btn:eui.Button;
 
 	public constructor() {
 		super();
@@ -28,6 +37,12 @@ class ShopScene extends eui.Component implements  eui.UIComponent {
 		this.coinLabel.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapCoin,this);
 		this.propBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapProp,this);
 		this.propLabel.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapProp,this);
+		this.buyStrenthBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.buyStrenth,this);
+		this.buyResurgenceBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.buyResurgence,this);
+		this.rmb1Btn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.buyYiRmb,this);
+		this.rmb6Btn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.buyLiuRmb,this);
+		this.rmb30Btn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.buySanshiRmb,this);
+		this.rmb60Btn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.buyLiushiRmb,this);
 	}
 	private tapGotoMainBtn(){
 		// 切换场景
@@ -42,5 +57,23 @@ class ShopScene extends eui.Component implements  eui.UIComponent {
 	private tapProp(){
 		// 切换状态
 		this.skin.currentState = "prop";
+	}
+	private buyStrenth(){
+		
+	}
+	private buyResurgence(){
+		
+	}
+	private buyYiRmb(){
+		
+	}
+	private buyLiuRmb(){
+		
+	}
+	private buySanshiRmb(){
+		
+	}
+	private buyLiushiRmb(){
+
 	}
 }

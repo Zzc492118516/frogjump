@@ -12,11 +12,14 @@
 		"libs/modules/promise/promise.js"
 	],
 	"game": [
+		"bin-debug/net/NetController.js",
 		"bin-debug/AssetAdapter.js",
-		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
+		"bin-debug/net/HttpAPI.js",
+		"bin-debug/LoadingUI.js",
+		"bin-debug/net/WS.js",
 		"bin-debug/scene/GameScene.js",
 		"bin-debug/scene/MenuScene.js",
 		"bin-debug/scene/SceneManager.js",

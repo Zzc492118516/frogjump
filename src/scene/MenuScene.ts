@@ -56,16 +56,8 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		this.init();
 	}
 	private init(){
-		var data = RES.getRes("frogBg_json");
-		var tex = RES.getRes("frogBg_png");
-		var mcf:egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data,tex);
-		var mc:egret.MovieClip = new egret.MovieClip(mcf.generateMovieClipData());
-		mc.x = 0;
-		mc.y = 427;
-		mc.scaleX = 2;
-		mc.scaleY = 2;
-		this.addChildAt(mc,1);
-		mc.gotoAndPlay(0,-1);
+		// 背景动图
+		this.addFrogBg();
 
 		// 设置监听
 		this.startBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapHandler,this);
@@ -153,6 +145,18 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	private tapHomeRank(){
 		// 切换状态
 		this.skin.currentState = "homeRank";
+	}
+	private addFrogBg(){
+		var data = RES.getRes("frogBg_json");
+		var tex = RES.getRes("frogBg_png");
+		var mcf:egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data,tex);
+		var mc:egret.MovieClip = new egret.MovieClip(mcf.generateMovieClipData());
+		mc.x = 0;
+		mc.y = 427;
+		mc.scaleX = 2;
+		mc.scaleY = 2;
+		this.addChildAt(mc,1);
+		mc.gotoAndPlay(0,-1);
 	}
 	private refreshPictrues(){
 		this.picture1.source = this.picturesName[this.picturesPage * 3 - 3];
