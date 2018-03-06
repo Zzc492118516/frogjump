@@ -60,11 +60,22 @@ class Main extends eui.UILayer {
     private async runGame() {
         await this.loadResource()
         this.createGameScene();
-        const result = await RES.getResAsync("description_json")
-        this.startAnimation(result);
-        await platform.login();
-        const userInfo = await platform.getUserInfo();
-        console.log(userInfo);
+        // const result = await RES.getResAsync("description_json")
+        // this.startAnimation(result);
+        // await platform.login();
+        // const userInfo = await platform.getUserInfo();
+        // console.log(userInfo);
+        function callUserId(msg) {
+            var info: any = {};
+            info.username = msg;
+            HttpAPI.HttpPOST(Constant.userIdUrl, info, () => {
+                console.log("post succeed");
+            },
+                () => {
+                    console.log("post failed");
+                }, this);
+        }
+        egret.ExternalInterface.addCallback("callUserId", callUserId);
 
     }
 
@@ -101,6 +112,7 @@ class Main extends eui.UILayer {
      */
     protected createGameScene(): void {
         this.addChild(SceneManger.getInstance());
+        egret.ExternalInterface.call("loadsuccess", "loadsuccess");
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
