@@ -23,6 +23,9 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	public scoreRankLabel:eui.Label;
 	public homeRankLabel:eui.Label;
 
+	// 排行的列表
+	public rankList:eui.List;
+
 	// 上方文字标签
 	public userNameLabel:eui.Label;
 	public strenthTimeLabel:eui.Label;
@@ -39,6 +42,17 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 
 	// 图鉴图片的名称
 	private picturesName:Array<string>;
+
+	// 图鉴解锁所需分数数组
+	private picScoreArray:Array<number>;
+
+	// 假的最高分
+	private highScore: number = 120;
+
+	// 假的排行数据
+	private rankDataSource:Array<any> = [{rankNum: 1,userName:"nidage",score: 25000},
+										{rankNum: 2,userName:"nierge",score:2500},
+										{rankNum: 3,userName:"nisange",score:250}];
 
 	public constructor() {
 		super();
@@ -83,6 +97,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		this.picturesName = ["handbook_1_jpg","handbook_2_jpg","handbook_3_jpg","handbook_4_jpg","handbook_5_jpg","handbook_6_jpg",
 		"handbook_7_jpg","handbook_8_jpg","handbook_9_jpg","handbook_10_jpg","handbook_11_jpg","handbook_12_jpg","handbook_13_jpg",
 		"handbook_14_jpg","handbook_15_jpg","handbook_16_jpg","handbook_17_jpg","handbook_18_jpg"];
+		this.picScoreArray = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900];
 		this.picturesMaxPaper = this.picturesName.length / 3;
 
 		// 图鉴添加遮罩
@@ -109,6 +124,13 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	private tapRank(){
 		// 切换状态
 		this.skin.currentState = "scoreRank";
+		// 初始化列表
+		if (!this.rankList) {
+			this.rankList = new eui.List();
+        	this.addChild(this.rankList);
+		}
+		this.rankList.dataProvider = new eui.ArrayCollection(this.rankDataSource);
+		this.rankList.itemRenderer = RankOne;
 	}
 	private tapShop(){
 		// 切换场景
@@ -159,16 +181,18 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		mc.gotoAndPlay(0,-1);
 	}
 	private refreshPictrues(){
-		this.picture1.source = this.picturesName[this.picturesPage * 3 - 3];
+		// 图鉴当前页第一张图片序列
+		var firstPicNum = this.picturesPage * 3 - 3;
+		this.picture1.source = this.highScore < this.picScoreArray[firstPicNum] ? "ic_blank_png" : this.picturesName[firstPicNum];
 		if (this.picturesPage * 3 - 2 < this.picturesName.length){
 			this.picture2.visible = true;
-			this.picture2.source = this.picturesName[this.picturesPage * 3 - 2];
+			this.picture2.source = this.highScore < this.picScoreArray[firstPicNum + 1] ? "ic_blank_png" : this.picturesName[firstPicNum + 1];
 		}else {
 			this.picture2.visible = false;
 		}
 		if (this.picturesPage * 3 - 1 < this.picturesName.length){
 			this.picture3.visible = true;
-			this.picture3.source = this.picturesName[this.picturesPage * 3 - 1];
+			this.picture3.source = this.highScore < this.picScoreArray[firstPicNum + 2] ? "ic_blank_png" : this.picturesName[firstPicNum + 2];
 		}else {
 			this.picture3.visible = false;
 		}
