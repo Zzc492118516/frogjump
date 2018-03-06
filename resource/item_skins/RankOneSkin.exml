@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="RankOneSkin" width="600" height="100" xmlns:e="http://ns.egret.com/eui">
-	<e:Label text="1" x="23" y="35"/>
-	<e:Image width="37" height="37" x="68" y="31.5" anchorOffsetX="0" anchorOffsetY="0" source="ic_left_png"/>
-	<e:Label text="nidage" x="144" y="35"/>
-	<e:Label text="20669" x="469" y="35"/>
+<e:Skin class="RankOneSkin" width="600" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Label id="rankNum" text="1" x="23" y="35" textColor="0xff0000"/>
+	<e:Image id="headIcon" width="37" height="37" x="68" y="31.5" anchorOffsetX="0" anchorOffsetY="0" source="ic_left_png"/>
+	<e:Label id="userName" text="nidage" x="144" y="35" textColor="0x000000"/>
+	<e:Label id="score" text="20669" x="449" y="35" textColor="0x000000" textAlign="right"/>
 </e:Skin>

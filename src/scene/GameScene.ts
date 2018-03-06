@@ -58,6 +58,10 @@ class GameScene extends eui.Component implements eui.UIComponent {
 
 	// 所有方块资源的数组
 	private blockSourceNames: Array<string> = [];
+	// 所有方块的分数数组
+	private blockScore: Array<number> = [];
+	// 记录下一个方块类型
+	private blockType: number;
 	// 所有方块的数组
 	private blockArr: Array<eui.Image> = [];
 	// 所有回收方块的数组
@@ -89,6 +93,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	}
 	private init() {
 		this.blockSourceNames = ["block-1_png", "block-2_png", "block-3_png", "block-4_png"];
+		this.blockScore = [1, 1, 1, 2];
 		// 初始化音频
 		this.pushVoice = RES.getRes('push_mp3');
 		this.jumpVoice = RES.getRes('jump_mp3');
@@ -225,7 +230,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 					this.score += 2 * this.centerCount;
 				} else {
 					this.centerCount = 0;
-					this.score++;
+					this.score+=this.blockScore[this.blockType];
 				}
 				this.scoreLabel.text = this.score.toString();
 				// 随机下一个方块出现的位置
@@ -298,8 +303,10 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			blockNode = new eui.Image();
 		}
 		// 使用随机背景图
-		let n = Math.floor(Math.random() * this.blockSourceNames.length);
-		blockNode.source = this.blockSourceNames[n];
+		this.blockType = Math.floor(Math.random() * (this.blockSourceNames.length - 0.5));
+		console.log(this.blockType);
+		
+		blockNode.source = this.blockSourceNames[this.blockType];
 		this.blockPanel.addChild(blockNode); 
 		// 设置缩放
 		let scale = this.minScale;
