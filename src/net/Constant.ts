@@ -1,10 +1,10 @@
 // TypeScript file
 class Constant {
-    public static BASE_URL="47.97.35.54:8080/tiaotiao";
+    public static BASE_URL="http://47.97.35.54:8080/tiaotiao";
     /**
      * 用户标识
      */
-    public static userIdUrl=Constant.BASE_URL+"/user/userinfo?username";
+    public static userIdUrl=Constant.BASE_URL+"/user/userinfo";
     /**
      * 使用道具
      */

@@ -66,15 +66,16 @@ class Main extends eui.UILayer {
         // const userInfo = await platform.getUserInfo();
         // console.log(userInfo);
         function callUserId(msg) {
-            var info: any = {};
-            info.username = msg;
-            HttpAPI.HttpPOST(Constant.userIdUrl, info, () => {
-                console.log("post succeed");
+            var params:any = "username="+msg;
+            HttpAPI.HttpPOST(Constant.userIdUrl, params, (event) => {
+                var request = event.currentTarget;
+               console.log("get data : ",request.response);
             },
                 () => {
                     console.log("post failed");
                 }, this);
         }
+        egret.localStorage.setItem("key","value");
         egret.ExternalInterface.addCallback("callUserId", callUserId);
 
     }

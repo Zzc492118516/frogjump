@@ -47,7 +47,7 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 		this.rmb60Btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.buyLiushiRmb, this);
 
 		/**
-		 * 返回的就是充值的数额比如：1,6
+		 * 返回的就是充值后用户实际金币数目录
 		 */
 		function paySuccessd(msg) {
 			console.log(msg);
