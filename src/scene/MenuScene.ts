@@ -128,7 +128,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 			let update = UserUtils.getInstance().getOwnUser().update;
 			let min = Math.floor(update / 60000);
 			let sec = Math.floor((update % 60000) / 1000);
-			this.strenthTimeLabel.text = "0:03"//min + ":" + (sec > 10 ? sec : "0" + sec);
+			this.strenthTimeLabel.text = min + ":" + (sec > 10 ? sec : "0" + sec);
 			// 设置倒计时
 			this.strenthTimer.start();
         }, this);
