@@ -55,6 +55,8 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 										{rankNum: 2,userName:"nierge",score:2500},
 										{rankNum: 3,userName:"nisange",score:250}];
 
+	private strenthTimer:egret.Timer;
+
 	public constructor() {
 		super();
 		// 设置入场网络请求
@@ -103,6 +105,10 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		this.picScoreArray = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900];
 		this.picturesMaxPaper = this.picturesName.length / 3;
 
+		// 初始化倒计时
+		this.strenthTimer = new egret.Timer(1000, 0);
+		this.strenthTimer.addEventListener(egret.TimerEvent.TIMER, this.timerChange, this);
+
 		// 图鉴添加遮罩
 		this.addMaskShape(this.picture1);
 		this.addMaskShape(this.picture2);
@@ -119,7 +125,29 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 			this.coinLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
 			this.highScore = UserUtils.getInstance().getOwnUser().userMark;
 			this.strenthNumLabel.text = UserUtils.getInstance().getOwnUser().activeNum + "";
+			let update = UserUtils.getInstance().getOwnUser().update;
+			let min = Math.floor(update / 60000);
+			let sec = Math.floor((update % 60000) / 1000);
+			this.strenthTimeLabel.text = "0:03"//min + ":" + (sec > 10 ? sec : "0" + sec);
+			// 设置倒计时
+			this.strenthTimer.start();
         }, this);
+	}
+	private timerChange(){
+		let str: string = this.strenthTimeLabel.text;
+		let second = parseInt(str.substring(str.length - 2)) - 1;
+		let minute = parseInt(str.substring(0, str.length - 3));
+		if (second < 0) {
+			second = 59;
+			minute--;
+		}
+		if (minute < 0) {
+			let strenthNumStr: string = this.strenthNumLabel.text;
+			this.strenthNumLabel.text = (parseInt(strenthNumStr) + 1) + "";
+			minute = 119;
+		}
+		str = minute + ":" + (second >= 10 ? second : "0" + second);
+		this.strenthTimeLabel.text = str;
 	}
 	private tapHandler(){
 		// 切换场景
