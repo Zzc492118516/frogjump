@@ -8,7 +8,14 @@ class UserUtils {
 		return this._instance;
 	}
 	public saveOwnUser(user: User) {
-		this.ownUser = user;
+		if(this.ownUser==null)
+		this.ownUser=new User();
+		this.ownUser.propNum = user.propNum;
+		this.ownUser.activeNum = user.activeNum;
+		this.ownUser.update = user.update;
+		this.ownUser.userGold = user.userGold;
+		this.ownUser.userid = user.userid;
+		this.ownUser.userMark = user.userMark;
 	}
 	public getOwnUser(): User {
 		return this.ownUser;

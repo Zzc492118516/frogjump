@@ -116,7 +116,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
             UserUtils.getInstance().saveOwnUser(user);
 			// 设置数据
 			this.userNameLabel.text = UserUtils.getInstance().getOwnUser().userid + "";
-			this.coinLabel.text = UserUtils.getInstance().getOwnUser().userGold + "";
+			this.coinLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
 			this.highScore = UserUtils.getInstance().getOwnUser().userMark;
 			this.strenthNumLabel.text = UserUtils.getInstance().getOwnUser().activeNum + "";
         }, this);
