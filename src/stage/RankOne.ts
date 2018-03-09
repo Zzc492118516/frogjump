@@ -13,9 +13,9 @@ class RankOne extends eui.ItemRenderer{
     
     public dataChanged():void{
         // 将数据对应到组件上
-        this.rankNum.text = this.data.rankNum;
-        this.userName.text = this.data.userName;
-        this.score.text = this.data.score;
+        this.rankNum.text = this.data.markRank + "";
+        this.userName.text = this.data.username;
+        this.score.text = this.data.mark + "";
     }
     
 }

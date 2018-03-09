@@ -28,6 +28,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 
 	// 上方文字标签
 	public userNameLabel:eui.Label;
+	public strenthNumLabel:eui.Label;
 	public strenthTimeLabel:eui.Label;
 	public coinLabel:eui.Label;
 
@@ -46,8 +47,8 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	// 图鉴解锁所需分数数组
 	private picScoreArray:Array<number>;
 
-	// 假的最高分
-	private highScore: number = 120;
+	// 最高分
+	private highScore: number;
 
 	// 假的排行数据
 	private rankDataSource:Array<any> = [{rankNum: 1,userName:"nidage",score: 25000},
@@ -56,6 +57,8 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 
 	public constructor() {
 		super();
+		// 设置入场网络请求
+		this.addEventListener(egret.Event.ADDED_TO_STAGE,this.addToStage,this);
 	}
 
 	protected partAdded(partName:string,instance:any):void
@@ -105,9 +108,30 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		this.addMaskShape(this.picture2);
 		this.addMaskShape(this.picture3);
 	}
+	private addToStage() {
+		var params:any = "username="+egret.localStorage.getItem("username");
+        NetController.getInstance().postData(Constant.userIdUrl, params, function(data){
+            let response = JSON.parse(data.response);
+            let user: User = response.date;
+            UserUtils.getInstance().saveOwnUser(user);
+			// 设置数据
+			this.userNameLabel.text = UserUtils.getInstance().getOwnUser().userid + "";
+			this.coinLabel.text = UserUtils.getInstance().getOwnUser().userGold + "";
+			this.highScore = UserUtils.getInstance().getOwnUser().userMark;
+			this.strenthNumLabel.text = UserUtils.getInstance().getOwnUser().activeNum + "";
+        }, this);
+	}
 	private tapHandler(){
 		// 切换场景
-		SceneManger.getInstance().changeScene('gameScene');
+		var params:any = "username="+egret.localStorage.getItem("username");
+        NetController.getInstance().postData(Constant.useractiveUrl, params, function(data){
+			let response = JSON.parse(data.response);
+			if (response.code == "1"){
+				SceneManger.getInstance().changeScene('gameScene');
+			}else {
+				SceneManger.getInstance().changeScene('gameScene');
+			}
+        }, this);
 	}
 	private tapHome(){
 
@@ -129,8 +153,16 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 			this.rankList = new eui.List();
         	this.addChild(this.rankList);
 		}
-		this.rankList.dataProvider = new eui.ArrayCollection(this.rankDataSource);
-		this.rankList.itemRenderer = RankOne;
+		var params:any = "username="+egret.localStorage.getItem("username");
+        NetController.getInstance().postData(Constant.userListUrl, params, function(data){
+			let response = JSON.parse(data.response);
+			if (response.code == "1"){
+				this.rankList.dataProvider = new eui.ArrayCollection(response.data);
+				this.rankList.itemRenderer = RankOne;
+			}else {
+				
+			}
+        }, this);
 	}
 	private tapShop(){
 		// 切换场景

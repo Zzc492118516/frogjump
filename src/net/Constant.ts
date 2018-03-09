@@ -25,4 +25,12 @@ class Constant {
      * 排行榜 
      */
     public static userListUrl=Constant.BASE_URL+"/user/userList";
+    /**
+     * 买复活 
+     */
+    public static buyResurrection=Constant.BASE_URL+"/userprop/BuyResurrection";
+    /**
+     * 买体力 
+     */
+    public static buyActive=Constant.BASE_URL+"/useractive/buyActive";
 }

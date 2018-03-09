@@ -24,10 +24,14 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	public scoreLabel: eui.Label;
 	// 游戏结束面板得分
 	public overScoreLabel: eui.Label;
+	// 游戏结束最高分面板
+	public highestLabel: eui.Label;
 	// 再来一局
 	public restart: eui.Button;
 	// 返回菜单
 	public gotoMainBtn: eui.Button;
+	// 排行榜
+	public rankList: eui.List;
 
 	// tanθ角度值
 	public arrayRatio: number = 0.556047197640118;
@@ -268,15 +272,56 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			} else {
 				// 失败,弹出重新开始的panel
 				console.log('游戏失败!');
-				this.overPanel.visible = true;
-				this.overScoreLabel.text = this.score.toString();
+				// 请求使用复活
+				var params:any = "username="+egret.localStorage.getItem("username");
+				NetController.getInstance().postData(Constant.userpropUrl, params, function(data){
+					let response = JSON.parse(data.response);
+					if (response.code == "1"){
+						// 使用复活成功，继续
+						this.player.x = this.lastBlock.x;
+						this.player.y = this.lastBlock.y;
+						this.blockPanel.touchEnabled = true;
+					}else {
+						// 使用复活失败，获取最高分
+						this.failureJudge();
+					}
+        		}, this);
 			}
 		} else {
 			// 让屏幕重新可点;
 			this.blockPanel.touchEnabled = true;
 		}
+	}
 
+	// 确认失败后上传数据并刷新界面
+	private failureJudge() {
+		// 获取排行榜数据
+		if (!this.rankList) {
+			this.rankList = new eui.List();
+        	this.addChild(this.rankList);
+		}
+		var params:any = "username="+egret.localStorage.getItem("username");
+        NetController.getInstance().postData(Constant.userListUrl, params, function(data){
+			let response = JSON.parse(data.response);
+			if (response.code == "1"){
+				this.rankList.dataProvider = new eui.ArrayCollection(response.data);
+				this.rankList.itemRenderer = RankOne;
+			}else {
+				
+			}
+        }, this);
 
+		var params_1:any = "username="+egret.localStorage.getItem("username")+"&"+"mark="+this.score.toString();
+		NetController.getInstance().postData(Constant.addAchievmentsUrl, params_1, function(data){
+			let response = JSON.parse(data.response);
+			if (response.code == "1"){
+				this.overPanel.visible = true;
+				this.overScoreLabel.text = this.score.toString();
+				this.highestLabel.text = "历史最高：" + response.data;
+			}else {
+				
+			}
+        }, this);
 	}
 
 

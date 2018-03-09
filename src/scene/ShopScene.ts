@@ -8,6 +8,9 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 	public coinLabel: eui.Label;
 	public propLabel: eui.Label;
 
+	// 金币数量
+	public goldLabel: eui.Label;
+
 	// 购买按钮
 	public buyStrenthBtn: eui.Button;
 	public buyResurgenceBtn: eui.Button;
@@ -22,6 +25,10 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 
 	public constructor() {
 		super();
+		// 设置入场刷新金币数
+		this.addEventListener(egret.Event.ADDED_TO_STAGE,function() {
+			this.goldLabel.text = UserUtils.getInstance().getOwnUser().userGold + "";
+		},this);
 	}
 
 	protected partAdded(partName: string, instance: any): void {
@@ -46,6 +53,8 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 		this.rmb30Btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.buySanshiRmb, this);
 		this.rmb60Btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.buyLiushiRmb, this);
 
+		this.goldLabel.text = UserUtils.getInstance().getOwnUser().userGold + "";
+
 		/**
 		 * 返回的就是充值后用户实际金币数目录
 		 */
@@ -69,10 +78,28 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 		this.skin.currentState = "prop";
 	}
 	private buyStrenth() {
-
+		var params:any = "username="+egret.localStorage.getItem("username")+"&"+"price="+"100";
+        NetController.getInstance().postData(Constant.buyActive, params, function(data){
+			let response = JSON.parse(data.response);
+			if (response.code == "1"){
+				UserUtils.getInstance().getOwnUser().userGold -= 100;
+				this.goldLabel.text = UserUtils.getInstance().getOwnUser().userGold + "";
+			}else {
+				
+			}
+        }, this);
 	}
 	private buyResurgence() {
-		this.connectLoading();
+		var params:any = "username="+egret.localStorage.getItem("username")+"&"+"price="+"200";
+        NetController.getInstance().postData(Constant.buyResurrection, params, function(data){
+			let response = JSON.parse(data.response);
+			if (response.code == "1"){
+				UserUtils.getInstance().getOwnUser().userGold -= 200;
+				this.goldLabel.text = UserUtils.getInstance().getOwnUser().userGold + "";
+			}else {
+				
+			}
+        }, this);
 	}
 	private buyYiRmb() {
 		egret.ExternalInterface.call("gotoPay", "10001,1");

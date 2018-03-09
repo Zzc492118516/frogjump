@@ -10,7 +10,7 @@
 		<e:Rect left="0" top="0" right="0" bottom="0" fillAlpha="0.6" width="750" height="1334"/>
 		<e:Image width="638" height="312" y="72" anchorOffsetX="0" anchorOffsetY="0" source="ic_scoreDialog_png" x="56"/>
 		<e:Image width="638" height="618" x="56" y="422" source="bg_dialog_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="80,52,484,318"/>
-		<e:Label id="highestLabel" text="历史最高：" horizontalCenter="0" top="306" height="50" size="28" textColor="0x676767" textAlign="center"/>
+		<e:Label id="highestLabel" text="历史最高：" horizontalCenter="0" top="306" height="50" size="28" textColor="0x676767" textAlign="center" width="440"/>
 		<e:Label id="overScoreLabel" text="20" horizontalCenter="0.5" top="173" height="90" size="90" textColor="0x676767"/>
 		<e:Button id="restart" label="" horizontalCenter="51.5" bottom="53">
 			<e:skinName>
@@ -36,5 +36,6 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
+		<e:List id="rankList" width="548" height="426" x="100" y="456.5" anchorOffsetX="0" anchorOffsetY="0"/>
 	</e:Group>
 </e:Skin>

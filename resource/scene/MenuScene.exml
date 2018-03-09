@@ -70,6 +70,7 @@
 	<e:Label id="strenthTimeLabel" text="99:99" x="368.5" y="43" textAlign="center"/>
 	<e:Label id="coinLabel" text="99999" x="610" y="43" textAlign="left"/>
 	<e:Image width="526" height="150" x="112" y="198" source="ic_name_png" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Label id="strenthNumLabel" text="0" x="297" y="38" anchorOffsetX="0" width="32" textAlign="center"/>
 	<e:Image width="750" height="319" x="0" y="457" source="ic_mainPic_png" anchorOffsetX="0" anchorOffsetY="0" visible="false"/>
 	<e:Group id="userInfoGroup" width="750" height="1334" x="0" y="0" visible.handbook="false" visible.main="false" visible.scoreRank="false" visible.homeRank="false">
 		<e:Rect width="750" height="1334" x="0" y="0" strokeAlpha="1" fillAlpha="0.5"/>

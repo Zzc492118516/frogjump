@@ -59,23 +59,20 @@ class Main extends eui.UILayer {
 
     private async runGame() {
         await this.loadResource()
-        this.createGameScene();
         // const result = await RES.getResAsync("description_json")
         // this.startAnimation(result);
         // await platform.login();
         // const userInfo = await platform.getUserInfo();
         // console.log(userInfo);
+
+        // 模拟器用
+        egret.localStorage.setItem("username","wenwen");
+        this.createGameScene();
+        // 真机用
         function callUserId(msg) {
-            var params:any = "username="+msg;
-            HttpAPI.HttpPOST(Constant.userIdUrl, params, (event) => {
-                var request = event.currentTarget;
-               console.log("get data : ",request.response);
-            },
-                () => {
-                    console.log("post failed");
-                }, this);
+            egret.localStorage.setItem("username",msg);
+            this.createGameScene();
         }
-        egret.localStorage.setItem("key","value");
         egret.ExternalInterface.addCallback("callUserId", callUserId);
 
     }

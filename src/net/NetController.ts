@@ -136,6 +136,17 @@ class NetController {
         }
     }
 
+    /**POST请求*/
+    public postData(httpStr:string, params:any, callBack?: Function, thisObj?) {
+        HttpAPI.HttpPOST(httpStr, params, (event) => {
+            var request = event.currentTarget;
+            console.log("get data : ",request);
+            callBack.call(thisObj, request);
+        },() => {
+            console.log("post failed");
+        }, this);
+    }
+
     /**打印*/
     public showState(s: string): void {
         console.warn(s);
