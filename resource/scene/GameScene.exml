@@ -38,4 +38,25 @@
 		</e:Button>
 		<e:List id="rankList" width="548" height="426" x="100" y="456.5" anchorOffsetX="0" anchorOffsetY="0"/>
 	</e:Group>
+	<e:Group id="usePropPanel" width="383" height="399" x="183" y="385" anchorOffsetX="0" anchorOffsetY="0" visible="false">
+		<e:Image width="383" height="399" x="0" y="0" source="resurgence_frame_png" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:Button id="yesBtn" label="" x="20.5" y="79.5">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="resurgence_yes_png" source.down="resurgence_yes_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="noBtn" label="" x="21.5" y="233">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="resurgence_no_png" source.down="resurgence_no_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Label id="propNumLabel" text="99" x="300" y="29"/>
+		<e:Label id="usePropNumLabel" text="99" x="237" y="150" textAlign="center" anchorOffsetX="0" width="78"/>
+	</e:Group>
 </e:Skin>

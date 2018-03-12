@@ -8,7 +8,7 @@ class Constant {
     /**
      * 使用道具
      */
-    public static userpropUrl=Constant.BASE_URL+"/userprop/prop";
+    public static userpropUrl=Constant.BASE_URL+"/userprop/operation";
     /**
      * 使用体力
      */

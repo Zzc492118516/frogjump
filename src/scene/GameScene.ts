@@ -15,9 +15,13 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	private moveInterval = 500;
 	// 游戏结束面板
 	public overPanel: eui.Group;
+	// 使用复活卡面板
+	public usePropPanel: eui.Group;
 
-	//连续中央位置次数
+	// 连续中央位置次数
 	private centerCount = 0;
+	// 连续使用复活卡次数
+	private propUseCount = 1;
 	// 游戏中得分
 	private score = 0;
 	// 游戏中得分面板;
@@ -30,8 +34,15 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	public restart: eui.Button;
 	// 返回菜单
 	public gotoMainBtn: eui.Button;
+	// 复活按钮
+	public yesBtn: eui.Button;
+	public noBtn: eui.Button;
 	// 排行榜
 	public rankList: eui.List;
+	// 复活卡剩余数量
+	public propNumLabel: eui.Label;
+	// 复活卡本次使用数量
+	public usePropNumLabel: eui.Label;
 
 	// tanθ角度值
 	public arrayRatio: number = 0.556047197640118;
@@ -107,8 +118,10 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		this.blockPanel.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onKeyDown, this);
 		this.blockPanel.addEventListener(egret.TouchEvent.TOUCH_END, this.onKeyUp, this);
 		// 绑定结束按钮
-		this.restart.addEventListener(egret.TouchEvent.TOUCH_TAP, this.restartHandler, this);
+		this.restart.addEventListener(egret.TouchEvent.TOUCH_TAP, this.restartGame, this);
 		this.gotoMainBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.returnMain, this);
+		this.yesBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tryResurgence, this);
+		this.noBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.failureJudge, this);
 		// 设置玩家的锚点
 		// 设置锚点
 		this.player.anchorOffsetX = this.player.width / 2;
@@ -126,6 +139,8 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		// 清空舞台
 		this.blockPanel.removeChildren();
 		this.blockArr = [];
+		this.centerCount = 0;
+		this.propUseCount = 1;
 		// 添加一个方块
 		let blockNode = this.createBlock();
 		blockNode.touchEnabled = false;
@@ -272,20 +287,14 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			} else {
 				// 失败,弹出重新开始的panel
 				console.log('游戏失败!');
-				// 请求使用复活
-				var params:any = "username="+egret.localStorage.getItem("username");
-				NetController.getInstance().postData(Constant.userpropUrl, params, function(data){
-					let response = JSON.parse(data.response);
-					if (response.code == "1"){
-						// 使用复活成功，继续
-						this.player.x = this.lastBlock.x;
-						this.player.y = this.lastBlock.y;
-						this.blockPanel.touchEnabled = true;
-					}else {
-						// 使用复活失败，获取最高分
-						this.failureJudge();
-					}
-        		}, this);
+				// 弹出提示框请求使用复活
+				if (UserUtils.getInstance().getOwnUser().propNum >= this.propUseCount) {
+					this.usePropPanel.visible = true;
+					this.propNumLabel.text = UserUtils.getInstance().getOwnUser().propNum + "";
+					this.usePropNumLabel.text = "-" + this.propUseCount;
+				} else {
+					this.failureJudge();
+				}
 			}
 		} else {
 			// 让屏幕重新可点;
@@ -293,8 +302,28 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		}
 	}
 
+	// 尝试复活
+	private tryResurgence() {
+		var params:any = "username="+egret.localStorage.getItem("username")+"&"+"num="+this.propUseCount;
+		NetController.getInstance().postData(Constant.userpropUrl, params, function(data){
+			let response = JSON.parse(data.response);
+			if (response.code == "1"){
+				// 使用复活成功，继续
+				this.player.x = this.lastBlock.x;
+				this.player.y = this.lastBlock.y;
+				this.blockPanel.touchEnabled = true;
+				UserUtils.getInstance().getOwnUser().propNum = UserUtils.getInstance().getOwnUser().propNum - this.propUseCount;
+				this.propUseCount++;
+				this.usePropPanel.visible = false;
+			}else {
+
+			}
+        }, this);
+	}
+
 	// 确认失败后上传数据并刷新界面
 	private failureJudge() {
+		this.usePropPanel.visible = false;
 		// 获取排行榜数据
 		if (!this.rankList) {
 			this.rankList = new eui.List();
@@ -385,6 +414,18 @@ class GameScene extends eui.Component implements eui.UIComponent {
 				}, this.moveInterval)
 			}
 		}
+	}
+	// 尝试重新一局
+	private restartGame() {
+		var params:any = "username="+egret.localStorage.getItem("username");
+        NetController.getInstance().postData(Constant.useractiveUrl, params, function(data){
+			let response = JSON.parse(data.response);
+			if (response.code == "1"){
+				this.restartHandler();
+			}else {
+				
+			}
+        }, this);
 	}
 	// 重新一局
 	private restartHandler() {

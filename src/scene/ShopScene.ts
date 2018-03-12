@@ -9,7 +9,9 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 	public propLabel: eui.Label;
 
 	// 金币数量
-	public goldLabel: eui.Label;
+	public coinNumLabel: eui.Label;
+	// 复活卡数量
+	public propNumLabel: eui.Label;
 
 	// 购买按钮
 	public buyStrenthBtn: eui.Button;
@@ -27,7 +29,8 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 		super();
 		// 设置入场刷新金币数
 		this.addEventListener(egret.Event.ADDED_TO_STAGE,function() {
-			this.goldLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
+			this.coinNumLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
+			this.propNumLabel.text = UserUtils.getInstance().getOwnUser().propNum + "";
 		},this);
 	}
 
@@ -53,14 +56,12 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 		this.rmb30Btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.buySanshiRmb, this);
 		this.rmb60Btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.buyLiushiRmb, this);
 
-		this.goldLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
-
 		/**
 		 * 返回的就是充值后用户实际金币数目录
 		 */
 		function paySuccessd(msg) {
 			UserUtils.getInstance().getOwnUser().userGold=parseInt(msg);
-			this.goldLabel.text =UserUtils.getInstance().getOwnUser().formatGold();
+			this.coinNumLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
 		}
 		egret.ExternalInterface.addCallback("paySuccessd", paySuccessd.bind(this));
 	}
@@ -84,7 +85,7 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 			let response = JSON.parse(data.response);
 			if (response.code == "1"){
 				UserUtils.getInstance().getOwnUser().userGold -= 100;
-				this.goldLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
+				this.coinNumLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
 			}else {
 				
 			}
@@ -96,7 +97,9 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 			let response = JSON.parse(data.response);
 			if (response.code == "1"){
 				UserUtils.getInstance().getOwnUser().userGold -= 200;
-				this.goldLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
+				UserUtils.getInstance().getOwnUser().propNum++;
+				this.coinNumLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
+				this.propNumLabel.text = UserUtils.getInstance().getOwnUser().propNum + "";
 			}else {
 				
 			}

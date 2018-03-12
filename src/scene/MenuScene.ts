@@ -103,7 +103,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		"handbook_7_jpg","handbook_8_jpg","handbook_9_jpg","handbook_10_jpg","handbook_11_jpg","handbook_12_jpg","handbook_13_jpg",
 		"handbook_14_jpg","handbook_15_jpg","handbook_16_jpg","handbook_17_jpg","handbook_18_jpg"];
 		this.picScoreArray = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900];
-		this.picturesMaxPaper = this.picturesName.length / 3;
+		this.picturesMaxPaper = Math.floor(this.picturesName.length / 3);
 
 		// 初始化倒计时
 		this.strenthTimer = new egret.Timer(1000, 0);
@@ -117,20 +117,29 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	private addToStage() {
 		var params:any = "username="+egret.localStorage.getItem("username");
         NetController.getInstance().postData(Constant.userIdUrl, params, function(data){
-            let response = JSON.parse(data.response);
-            let user: User = response.date;
-            UserUtils.getInstance().saveOwnUser(user);
-			// 设置数据
-			this.userNameLabel.text = UserUtils.getInstance().getOwnUser().userid + "";
-			this.coinLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
-			this.highScore = UserUtils.getInstance().getOwnUser().userMark;
-			this.strenthNumLabel.text = UserUtils.getInstance().getOwnUser().activeNum + "";
-			let update = UserUtils.getInstance().getOwnUser().update;
-			let min = Math.floor(update / 60000);
-			let sec = Math.floor((update % 60000) / 1000);
-			this.strenthTimeLabel.text = min + ":" + (sec > 10 ? sec : "0" + sec);
-			// 设置倒计时
-			this.strenthTimer.start();
+			let response = JSON.parse(data.response);
+			if (response.code == "1") {
+            	let user: User = response.date;
+            	UserUtils.getInstance().saveOwnUser(user);
+				// 设置数据
+				this.userNameLabel.text = UserUtils.getInstance().getOwnUser().userid + "";
+				this.coinLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
+				this.highScore = UserUtils.getInstance().getOwnUser().userMark;
+				this.strenthNumLabel.text = UserUtils.getInstance().getOwnUser().activeNum + "";
+				let update = UserUtils.getInstance().getOwnUser().update;
+				let min = Math.floor(update / 60000);
+				let sec = Math.floor((update % 60000) / 1000);
+				this.strenthTimeLabel.text = min + ":" + (sec >= 10 ? sec : "0" + sec);
+				// 设置倒计时
+				if (UserUtils.getInstance().getOwnUser().activeNum < 5) {
+					this.strenthTimer.start();
+				} else {
+					this.strenthTimer.stop();
+				}
+				
+			} else {
+
+			}
         }, this);
 	}
 	private timerChange(){
@@ -144,7 +153,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		if (minute < 0) {
 			let strenthNumStr: string = this.strenthNumLabel.text;
 			this.strenthNumLabel.text = (parseInt(strenthNumStr) + 1) + "";
-			minute = 119;
+			minute = 89;
 		}
 		str = minute + ":" + (second >= 10 ? second : "0" + second);
 		this.strenthTimeLabel.text = str;
@@ -157,7 +166,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 			if (response.code == "1"){
 				SceneManger.getInstance().changeScene('gameScene');
 			}else {
-				SceneManger.getInstance().changeScene('gameScene');
+				
 			}
         }, this);
 	}
