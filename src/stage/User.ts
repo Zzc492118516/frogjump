@@ -12,6 +12,8 @@ class User {
 	}
 
 	public set userGold(Gold: number) {
+		if (Gold == null||Gold==undefined)
+			Gold = 0;
 		this._userGold = Gold;
 	}
 	public get userGold(): number {

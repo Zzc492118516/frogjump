@@ -65,15 +65,18 @@ class Main extends eui.UILayer {
         // const userInfo = await platform.getUserInfo();
         // console.log(userInfo);
 
-        // 模拟器用
-        egret.localStorage.setItem("username","wenwen");
-        this.createGameScene();
-        // 真机用
-        function callUserId(msg) {
-            egret.localStorage.setItem("username",msg);
+        if (egret.Capabilities.runtimeType == egret.RuntimeType.WEB) {
+            // 模拟器用
+            egret.localStorage.setItem("username", "wenwen");
             this.createGameScene();
         }
-        egret.ExternalInterface.addCallback("callUserId", callUserId);
+        // 真机用
+        function callUserId(msg) {
+            egret.localStorage.setItem("username", msg);
+            this.createGameScene();
+        }
+        egret.ExternalInterface.addCallback("callUserId", callUserId.bind(this));
+        egret.ExternalInterface.call("loadsuccess", "loadsuccess");
 
     }
 
@@ -110,7 +113,6 @@ class Main extends eui.UILayer {
      */
     protected createGameScene(): void {
         this.addChild(SceneManger.getInstance());
-        egret.ExternalInterface.call("loadsuccess", "loadsuccess");
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

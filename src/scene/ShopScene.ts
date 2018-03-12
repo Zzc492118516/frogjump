@@ -61,9 +61,8 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 		function paySuccessd(msg) {
 			UserUtils.getInstance().getOwnUser().userGold=parseInt(msg);
 			this.goldLabel.text =UserUtils.getInstance().getOwnUser().formatGold();
-			console.log(msg);
 		}
-		egret.ExternalInterface.addCallback("paySuccessd", paySuccessd);
+		egret.ExternalInterface.addCallback("paySuccessd", paySuccessd.bind(this));
 	}
 	private tapGotoMainBtn() {
 		// 切换场景
