@@ -1,7 +1,6 @@
 // TypeScript file
 class Constant {
-    public static BASE_URL="http://sgame.51changmi.cn/tiaotiao";
-    /**
+    public static BASE_URL="http://sgame.51changmi.cn/tiaotiao";    /**
      * 用户标识
      */
     public static userIdUrl=Constant.BASE_URL+"/user/userinfo";

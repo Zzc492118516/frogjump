@@ -1,3 +1,5 @@
+declare class DialogSkin extends eui.Skin{
+}
 declare class RankOneSkin extends eui.Skin{
 }
 declare class GameSceneSkin extends eui.Skin{

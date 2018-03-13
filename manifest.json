@@ -11,8 +11,8 @@
 		"libs/modules/promise/promise.js"
 	],
 	"game": [
-		"bin-debug/AssetAdapter.js",
 		"bin-debug/LoadingUI.js",
+		"bin-debug/scene/GameScene.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
@@ -20,13 +20,15 @@
 		"bin-debug/net/HttpAPI.js",
 		"bin-debug/net/NetController.js",
 		"bin-debug/net/WS.js",
-		"bin-debug/scene/GameScene.js",
+		"bin-debug/AssetAdapter.js",
 		"bin-debug/scene/MenuScene.js",
 		"bin-debug/scene/SceneManager.js",
 		"bin-debug/scene/ShopScene.js",
+		"bin-debug/stage/Dialog.js",
 		"bin-debug/stage/Player.js",
 		"bin-debug/stage/RankOne.js",
 		"bin-debug/stage/User.js",
+		"bin-debug/utils/PanelUtils.js",
 		"bin-debug/utils/UserUtils.js"
 	]
 }
