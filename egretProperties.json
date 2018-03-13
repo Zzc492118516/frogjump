@@ -37,9 +37,6 @@
       "name": "socket"
     },
     {
-      "name": "experimental"
-    },
-    {
       "name": "promise"
     }
   ]

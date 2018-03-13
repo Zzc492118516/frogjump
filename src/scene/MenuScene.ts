@@ -241,7 +241,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		var data = RES.getRes("frogBg_json");
 		var tex = RES.getRes("frogBg_png");
 		var mcf:egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data,tex);
-		var mc:egret.MovieClip = new egret.MovieClip(mcf.generateMovieClipData());
+		var mc:egret.MovieClip = new egret.MovieClip(mcf.generateMovieClipData("05"));
 		mc.x = 0;
 		mc.y = 427;
 		mc.scaleX = 2;
