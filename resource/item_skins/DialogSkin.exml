@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="DialogSkin" width="412" height="301" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image width="400" height="300" x="0" y="0" source="bg_dialog_png" scale9Grid="62,52,524,318"/>
-	<e:Label id="dialogLabel" text="Label" x="0" y="73.5" anchorOffsetX="0" width="398" anchorOffsetY="0" height="153" verticalAlign="middle" textAlign="center" textColor="0x000000"/>
-	<e:Button id="closeBtn" label="" x="325" y="14">
+<e:Skin class="DialogSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="backView" width="750" height="1334" x="0" y="0" fillAlpha="0.4"/>
+	<e:Image width="400" height="300" x="198" y="517" source="bg_dialog_png" scale9Grid="62,52,524,318"/>
+	<e:Label id="dialogLabel" text="Label" x="198" y="581.5" anchorOffsetX="0" width="398" anchorOffsetY="0" height="153" verticalAlign="middle" textAlign="center" textColor="0x000000"/>
+	<e:Button id="closeBtn" label="" x="524" y="538">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="ic_close_png"/>

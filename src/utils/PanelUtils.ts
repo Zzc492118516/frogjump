@@ -23,8 +23,6 @@ class PanelUtils {
 		this._dialogText = dialogText;
 		if (!this.dialogPanel) {
 			this.dialogPanel = new Dialog();
-			this.dialogPanel.x = (750 - this.dialogPanel.width) / 2;
-			this.dialogPanel.y = (1334 - this.dialogPanel.height) / 2;
 		}
 		this.dialogPanel.dialogLabel.text = dialogText;
 	}
