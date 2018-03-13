@@ -423,7 +423,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			if (response.code == "1"){
 				this.restartHandler();
 			}else {
-				
+				PanelUtils.getInstance().showDialog("妈耶！没体力了！");
 			}
         }, this);
 	}

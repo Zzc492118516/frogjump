@@ -87,7 +87,7 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 				UserUtils.getInstance().getOwnUser().userGold -= 100;
 				this.coinNumLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
 			}else {
-				
+				PanelUtils.getInstance().showDialog("妈耶！你没钱了！");
 			}
         }, this);
 	}
@@ -101,7 +101,7 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 				this.coinNumLabel.text = UserUtils.getInstance().getOwnUser().formatGold();
 				this.propNumLabel.text = UserUtils.getInstance().getOwnUser().propNum + "";
 			}else {
-				
+				PanelUtils.getInstance().showDialog("妈耶！你没钱了！");
 			}
         }, this);
 	}

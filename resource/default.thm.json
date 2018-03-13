@@ -17,7 +17,8 @@
 		"GameScene": "resource/scene/GameScene.exml",
 		"MenuScene": "resource/scene/MenuScene.exml",
 		"ShopScene": "resource/scene/ShopScene.exml",
-		"RankOneSkin": "resource/item_skins/RankOneSkin.exml"
+		"RankOneSkin": "resource/item_skins/RankOneSkin.exml",
+		"DialogSkin": "resource/item_skins/DialogSkin.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -34,6 +35,7 @@
 		"resource/eui_skins/ToggleSwitchSkin.exml",
 		"resource/eui_skins/VScrollBarSkin.exml",
 		"resource/eui_skins/VSliderSkin.exml",
+		"resource/item_skins/DialogSkin.exml",
 		"resource/item_skins/RankOneSkin.exml",
 		"resource/scene/GameScene.exml",
 		"resource/scene/MenuScene.exml",

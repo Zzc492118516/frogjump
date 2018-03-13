@@ -138,7 +138,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 				}
 				
 			} else {
-
+				
 			}
         }, this);
 	}
@@ -166,7 +166,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 			if (response.code == "1"){
 				SceneManger.getInstance().changeScene('gameScene');
 			}else {
-				
+				PanelUtils.getInstance().showDialog("妈耶！没体力了！");
 			}
         }, this);
 	}
