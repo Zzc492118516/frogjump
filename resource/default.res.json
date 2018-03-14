@@ -460,6 +460,11 @@
 			"url": "assets/Handbooks/handbook_9.jpg",
 			"type": "image",
 			"name": "handbook_9_jpg"
+		},
+		{
+			"name": "piece01_png",
+			"type": "image",
+			"url": "assets/piece01.png"
 		}
 	]
 }
