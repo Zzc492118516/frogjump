@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,back_btn_png,finger_png,jump_mp3,push_mp3,relive_png,restart_btn_png,setting_bg_jpg,setting_btn_png,setting_off_png,setting_on_png,start_btn_png,streak_png,block-1_png,block-2_png,block-3_png,block-4_png,flog-default_png,bg_png,ic_coin_png,ic_home_png,ic_mainPic_png,ic_name_png,ic_pictures_png,ic_rank_png,ic_shop_png,ic_start_png,ic_strenthPoint_png,ic_user_png,bg_dialog_png,ic_close_png,ic_playAgain_png,ic_goHome_png,ic_scoreDialog_png,ic_rankBg_png,ic_yourRank_png,bg_coin_png,ic_1_png,ic_6_png,ic_30_png,ic_60_png,ic_buy_png,ic_coin_shop_png,ic_menu_png,ic_tag_select_png,ic_tag_png,ic_blank_png,ic_left_png,ic_right_png,handbook_1_jpg,handbook_2_jpg,handbook_3_jpg,handbook_4_jpg,handbook_5_jpg,handbook_6_jpg,handbook_7_jpg,handbook_8_jpg,handbook_9_jpg,handbook_10_jpg,handbook_11_jpg,handbook_12_jpg,handbook_13_jpg,handbook_14_jpg,handbook_15_jpg,handbook_16_jpg,handbook_17_jpg,handbook_18_jpg,bg_prop_png,ic_playAgain_press_png,ic_start_press_png,frogBg_png,frogBg_json,loading_json,loading_png,ic_1_press_png,ic_6_press_png,ic_30_press_png,ic_购买_press_png,ic_menu_press_png,ic_home_press_png,ic_pictures_press_png,ic_rank_press_png,ic_shop_press_png,ic_60_press_png,ic_buy_press_png,resurgence_no_png,resurgence_yes_png,resurgence_frame_png,resurgence_shop_png",
+			"keys": "bg_jpg,egret_icon_png,description_json,back_btn_png,finger_png,jump_mp3,push_mp3,relive_png,restart_btn_png,setting_bg_jpg,setting_btn_png,setting_off_png,setting_on_png,start_btn_png,streak_png,block-1_png,block-2_png,block-3_png,block-4_png,flog-default_png,bg_png,ic_coin_png,ic_home_png,ic_mainPic_png,ic_name_png,ic_pictures_png,ic_rank_png,ic_shop_png,ic_start_png,ic_strenthPoint_png,ic_user_png,bg_dialog_png,ic_close_png,ic_playAgain_png,ic_goHome_png,ic_scoreDialog_png,ic_rankBg_png,ic_yourRank_png,bg_coin_png,ic_1_png,ic_6_png,ic_30_png,ic_60_png,ic_buy_png,ic_coin_shop_png,ic_menu_png,ic_tag_select_png,ic_tag_png,ic_blank_png,ic_left_png,ic_right_png,bg_prop_png,ic_playAgain_press_png,ic_start_press_png,frogBg_png,frogBg_json,loading_json,loading_png,ic_1_press_png,ic_6_press_png,ic_30_press_png,ic_购买_press_png,ic_menu_press_png,ic_home_press_png,ic_pictures_press_png,ic_rank_press_png,ic_shop_press_png,ic_60_press_png,ic_buy_press_png,resurgence_no_png,resurgence_yes_png,resurgence_frame_png,resurgence_shop_png,piece01_png,000001_jpg,000002_jpg,000003_jpg,000004_jpg,000005_jpg,000006_jpg,000007_jpg,000008_jpg,000009_jpg,000010_jpg,000011_jpg,000012_jpg,000013_jpg,000014_jpg,000015_jpg,000016_jpg,000017_jpg,000018_jpg",
 			"name": "preload"
 		}
 	],
@@ -262,96 +262,6 @@
 			"url": "assets/Main/ic_right.png"
 		},
 		{
-			"name": "handbook_1_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_1.jpg"
-		},
-		{
-			"name": "handbook_2_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_2.jpg"
-		},
-		{
-			"name": "handbook_3_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_3.jpg"
-		},
-		{
-			"name": "handbook_4_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_4.jpg"
-		},
-		{
-			"name": "handbook_5_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_5.jpg"
-		},
-		{
-			"name": "handbook_6_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_6.jpg"
-		},
-		{
-			"name": "handbook_7_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_7.jpg"
-		},
-		{
-			"name": "handbook_8_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_8.jpg"
-		},
-		{
-			"name": "handbook_9_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_9.jpg"
-		},
-		{
-			"name": "handbook_10_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_10.jpg"
-		},
-		{
-			"name": "handbook_11_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_11.jpg"
-		},
-		{
-			"name": "handbook_12_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_12.jpg"
-		},
-		{
-			"name": "handbook_13_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_13.jpg"
-		},
-		{
-			"name": "handbook_14_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_14.jpg"
-		},
-		{
-			"name": "handbook_15_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_15.jpg"
-		},
-		{
-			"name": "handbook_16_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_16.jpg"
-		},
-		{
-			"name": "handbook_17_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_17.jpg"
-		},
-		{
-			"name": "handbook_18_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_18.jpg"
-		},
-		{
 			"name": "bg_prop_png",
 			"type": "image",
 			"url": "assets/Shop/bg_prop.png"
@@ -460,6 +370,101 @@
 			"name": "resurgence_shop_png",
 			"type": "image",
 			"url": "assets/Shop/resurgence_shop.png"
+		},
+		{
+			"name": "piece01_png",
+			"type": "image",
+			"url": "assets/piece01.png"
+		},
+		{
+			"name": "000001_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000001.jpg"
+		},
+		{
+			"name": "000002_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000002.jpg"
+		},
+		{
+			"name": "000003_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000003.jpg"
+		},
+		{
+			"name": "000004_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000004.jpg"
+		},
+		{
+			"name": "000005_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000005.jpg"
+		},
+		{
+			"name": "000006_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000006.jpg"
+		},
+		{
+			"name": "000007_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000007.jpg"
+		},
+		{
+			"name": "000008_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000008.jpg"
+		},
+		{
+			"name": "000009_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000009.jpg"
+		},
+		{
+			"name": "000010_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000010.jpg"
+		},
+		{
+			"name": "000011_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000011.jpg"
+		},
+		{
+			"name": "000012_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000012.jpg"
+		},
+		{
+			"name": "000013_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000013.jpg"
+		},
+		{
+			"name": "000014_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000014.jpg"
+		},
+		{
+			"name": "000015_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000015.jpg"
+		},
+		{
+			"name": "000016_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000016.jpg"
+		},
+		{
+			"name": "000017_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000017.jpg"
+		},
+		{
+			"name": "000018_jpg",
+			"type": "image",
+			"url": "assets/Handbooks/000018.jpg"
 		}
 	]
 }

@@ -3,7 +3,7 @@
 	<w:Config id="160e325f0a9" ></w:Config>
 	<e:Image id="bg" left="0" top="0" bottom="0" right="0" touchEnabled="true" x="0" y="0" scaleX="1" scaleY="1" source="bg_png"/>
 	<e:Group id="blockPanel" anchorOffsetX="0" anchorOffsetY="0" touchThrough="false" left="0" top="0" right="0" bottom="0" touchChildren="false" touchEnabled="false" width="750" height="1334">
-		<e:Image id="player" width="117" height="122" x="142" y="628" source="flog-default_png" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:Image id="player" width="117" height="122" x="142" y="628" anchorOffsetX="0" anchorOffsetY="0" source="piece01_png"/>
 		<e:Label id="scoreLabel" text="0" size="90" textColor="0x0a0202" left="100" top="100"/>
 	</e:Group>
 	<e:Group id="overPanel" left="0" top="0" right="0" bottom="0" width="750" height="1334" visible="false">
