@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,back_btn_png,finger_png,jump_mp3,push_mp3,relive_png,restart_btn_png,setting_bg_jpg,setting_btn_png,setting_off_png,setting_on_png,start_btn_png,streak_png,block-1_png,block-2_png,block-3_png,block-4_png,flog-default_png,bg_png,ic_coin_png,ic_home_png,ic_mainPic_png,ic_name_png,ic_pictures_png,ic_rank_png,ic_shop_png,ic_start_png,ic_strenthPoint_png,ic_user_png,bg_dialog_png,ic_close_png,ic_playAgain_png,ic_goHome_png,ic_scoreDialog_png,ic_rankBg_png,ic_yourRank_png,bg_coin_png,ic_1_png,ic_6_png,ic_30_png,ic_60_png,ic_buy_png,ic_coin_shop_png,ic_menu_png,ic_tag_select_png,ic_tag_png,ic_blank_png,ic_left_png,ic_right_png,handbook_1_jpg,handbook_2_jpg,handbook_3_jpg,handbook_4_jpg,handbook_5_jpg,handbook_6_jpg,handbook_7_jpg,handbook_8_jpg,handbook_9_jpg,handbook_10_jpg,handbook_11_jpg,handbook_12_jpg,handbook_13_jpg,handbook_14_jpg,handbook_15_jpg,handbook_16_jpg,handbook_17_jpg,handbook_18_jpg,bg_prop_png,ic_playAgain_press_png,ic_start_press_png,frogBg_png,frogBg_json,loading_json,loading_png,ic_1_press_png,ic_6_press_png,ic_30_press_png,ic_购买_press_png,ic_menu_press_png,ic_home_press_png,ic_pictures_press_png,ic_rank_press_png,ic_shop_press_png,ic_60_press_png,ic_buy_press_png,resurgence_no_png,resurgence_yes_png,resurgence_frame_png,resurgence_shop_png",
+			"keys": "egret_icon_png,description_json,back_btn_png,finger_png,jump_mp3,push_mp3,relive_png,restart_btn_png,setting_bg_jpg,setting_btn_png,setting_off_png,setting_on_png,start_btn_png,streak_png,block-1_png,block-2_png,block-3_png,block-4_png,flog-default_png,bg_png,ic_coin_png,ic_home_png,ic_mainPic_png,ic_name_png,ic_pictures_png,ic_rank_png,ic_shop_png,ic_start_png,ic_strenthPoint_png,ic_user_png,bg_dialog_png,ic_close_png,ic_playAgain_png,ic_goHome_png,ic_scoreDialog_png,ic_rankBg_png,ic_yourRank_png,bg_coin_png,ic_1_png,ic_6_png,ic_30_png,ic_60_png,ic_buy_png,ic_coin_shop_png,ic_menu_png,ic_tag_select_png,ic_tag_png,ic_blank_png,ic_left_png,ic_right_png,bg_prop_png,ic_playAgain_press_png,ic_start_press_png,frogBg_png,frogBg_json,loading_json,loading_png,ic_1_press_png,ic_6_press_png,ic_30_press_png,ic_购买_press_png,ic_menu_press_png,ic_home_press_png,ic_pictures_press_png,ic_rank_press_png,ic_shop_press_png,ic_60_press_png,ic_buy_press_png,resurgence_no_png,resurgence_yes_png,resurgence_frame_png,resurgence_shop_png,handbook_1_jpg,handbook_10_jpg,handbook_11_jpg,handbook_12_jpg,handbook_13_jpg,handbook_14_jpg,handbook_15_jpg,handbook_16_jpg,handbook_17_jpg,handbook_18_jpg,handbook_2_jpg,handbook_3_jpg,handbook_4_jpg,handbook_5_jpg,handbook_6_jpg,handbook_7_jpg,handbook_8_jpg,handbook_9_jpg",
 			"name": "preload"
 		}
 	],
@@ -17,449 +17,449 @@
 			"name": "egret_icon_png"
 		},
 		{
-			"name": "description_json",
+			"url": "config/description.json",
 			"type": "json",
-			"url": "config/description.json"
+			"name": "description_json"
 		},
 		{
-			"name": "back_btn_png",
+			"url": "assets/back_btn.png",
 			"type": "image",
-			"url": "assets/back_btn.png"
+			"name": "back_btn_png"
 		},
 		{
-			"name": "finger_png",
+			"url": "assets/finger.png",
 			"type": "image",
-			"url": "assets/finger.png"
+			"name": "finger_png"
 		},
 		{
-			"name": "jump_mp3",
+			"url": "assets/jump.mp3",
 			"type": "sound",
-			"url": "assets/jump.mp3"
+			"name": "jump_mp3"
 		},
 		{
-			"name": "push_mp3",
+			"url": "assets/push.mp3",
 			"type": "sound",
-			"url": "assets/push.mp3"
+			"name": "push_mp3"
 		},
 		{
-			"name": "relive_png",
+			"url": "assets/relive.png",
 			"type": "image",
-			"url": "assets/relive.png"
+			"name": "relive_png"
 		},
 		{
-			"name": "restart_btn_png",
+			"url": "assets/restart_btn.png",
 			"type": "image",
-			"url": "assets/restart_btn.png"
+			"name": "restart_btn_png"
 		},
 		{
-			"name": "setting_bg_jpg",
+			"url": "assets/setting_bg.jpg",
 			"type": "image",
-			"url": "assets/setting_bg.jpg"
+			"name": "setting_bg_jpg"
 		},
 		{
-			"name": "setting_btn_png",
+			"url": "assets/setting_btn.png",
 			"type": "image",
-			"url": "assets/setting_btn.png"
+			"name": "setting_btn_png"
 		},
 		{
-			"name": "setting_off_png",
+			"url": "assets/setting_off.png",
 			"type": "image",
-			"url": "assets/setting_off.png"
+			"name": "setting_off_png"
 		},
 		{
-			"name": "setting_on_png",
+			"url": "assets/setting_on.png",
 			"type": "image",
-			"url": "assets/setting_on.png"
+			"name": "setting_on_png"
 		},
 		{
-			"name": "start_btn_png",
+			"url": "assets/start_btn.png",
 			"type": "image",
-			"url": "assets/start_btn.png"
+			"name": "start_btn_png"
 		},
 		{
-			"name": "streak_png",
+			"url": "assets/streak.png",
 			"type": "image",
-			"url": "assets/streak.png"
+			"name": "streak_png"
 		},
 		{
-			"name": "block-1_png",
+			"url": "assets/block-1.png",
 			"type": "image",
-			"url": "assets/block-1.png"
+			"name": "block-1_png"
 		},
 		{
-			"name": "block-2_png",
+			"url": "assets/block-2.png",
 			"type": "image",
-			"url": "assets/block-2.png"
+			"name": "block-2_png"
 		},
 		{
-			"name": "block-3_png",
+			"url": "assets/block-3.png",
 			"type": "image",
-			"url": "assets/block-3.png"
+			"name": "block-3_png"
 		},
 		{
-			"name": "block-4_png",
+			"url": "assets/block-4.png",
 			"type": "image",
-			"url": "assets/block-4.png"
+			"name": "block-4_png"
 		},
 		{
-			"name": "flog-default_png",
+			"url": "assets/flog-default.png",
 			"type": "image",
-			"url": "assets/flog-default.png"
+			"name": "flog-default_png"
 		},
 		{
-			"name": "bg_png",
+			"url": "assets/bg.png",
 			"type": "image",
-			"url": "assets/bg.png"
+			"name": "bg_png"
 		},
 		{
-			"name": "ic_coin_png",
+			"url": "assets/Main/ic_coin.png",
 			"type": "image",
-			"url": "assets/Main/ic_coin.png"
+			"name": "ic_coin_png"
 		},
 		{
-			"name": "ic_home_png",
+			"url": "assets/Main/ic_home.png",
 			"type": "image",
-			"url": "assets/Main/ic_home.png"
+			"name": "ic_home_png"
 		},
 		{
-			"name": "ic_mainPic_png",
+			"url": "assets/Main/ic_mainPic.png",
 			"type": "image",
-			"url": "assets/Main/ic_mainPic.png"
+			"name": "ic_mainPic_png"
 		},
 		{
-			"name": "ic_name_png",
+			"url": "assets/Main/ic_name.png",
 			"type": "image",
-			"url": "assets/Main/ic_name.png"
+			"name": "ic_name_png"
 		},
 		{
-			"name": "ic_pictures_png",
+			"url": "assets/Main/ic_pictures.png",
 			"type": "image",
-			"url": "assets/Main/ic_pictures.png"
+			"name": "ic_pictures_png"
 		},
 		{
-			"name": "ic_rank_png",
+			"url": "assets/Main/ic_rank.png",
 			"type": "image",
-			"url": "assets/Main/ic_rank.png"
+			"name": "ic_rank_png"
 		},
 		{
-			"name": "ic_shop_png",
+			"url": "assets/Main/ic_shop.png",
 			"type": "image",
-			"url": "assets/Main/ic_shop.png"
+			"name": "ic_shop_png"
 		},
 		{
-			"name": "ic_start_png",
+			"url": "assets/Main/ic_start.png",
 			"type": "image",
-			"url": "assets/Main/ic_start.png"
+			"name": "ic_start_png"
 		},
 		{
-			"name": "ic_strenthPoint_png",
+			"url": "assets/Main/ic_strenthPoint.png",
 			"type": "image",
-			"url": "assets/Main/ic_strenthPoint.png"
+			"name": "ic_strenthPoint_png"
 		},
 		{
-			"name": "ic_user_png",
+			"url": "assets/Main/ic_user.png",
 			"type": "image",
-			"url": "assets/Main/ic_user.png"
+			"name": "ic_user_png"
 		},
 		{
-			"name": "bg_dialog_png",
+			"url": "assets/bg_dialog.png",
 			"type": "image",
-			"url": "assets/bg_dialog.png"
+			"name": "bg_dialog_png"
 		},
 		{
-			"name": "ic_close_png",
+			"url": "assets/ic_close.png",
 			"type": "image",
-			"url": "assets/ic_close.png"
+			"name": "ic_close_png"
 		},
 		{
-			"name": "ic_playAgain_png",
+			"url": "assets/ic_playAgain.png",
 			"type": "image",
-			"url": "assets/ic_playAgain.png"
+			"name": "ic_playAgain_png"
 		},
 		{
-			"name": "ic_goHome_png",
+			"url": "assets/ic_goHome.png",
 			"type": "image",
-			"url": "assets/ic_goHome.png"
+			"name": "ic_goHome_png"
 		},
 		{
-			"name": "ic_scoreDialog_png",
+			"url": "assets/ic_scoreDialog.png",
 			"type": "image",
-			"url": "assets/ic_scoreDialog.png"
+			"name": "ic_scoreDialog_png"
 		},
 		{
-			"name": "ic_rankBg_png",
+			"url": "assets/Rank/ic_rankBg.png",
 			"type": "image",
-			"url": "assets/Rank/ic_rankBg.png"
+			"name": "ic_rankBg_png"
 		},
 		{
-			"name": "ic_yourRank_png",
+			"url": "assets/Rank/ic_yourRank.png",
 			"type": "image",
-			"url": "assets/Rank/ic_yourRank.png"
+			"name": "ic_yourRank_png"
 		},
 		{
-			"name": "bg_coin_png",
+			"url": "assets/Shop/bg_coin.png",
 			"type": "image",
-			"url": "assets/Shop/bg_coin.png"
+			"name": "bg_coin_png"
 		},
 		{
-			"name": "ic_1_png",
+			"url": "assets/Shop/ic_1.png",
 			"type": "image",
-			"url": "assets/Shop/ic_1.png"
+			"name": "ic_1_png"
 		},
 		{
-			"name": "ic_6_png",
+			"url": "assets/Shop/ic_6.png",
 			"type": "image",
-			"url": "assets/Shop/ic_6.png"
+			"name": "ic_6_png"
 		},
 		{
-			"name": "ic_30_png",
+			"url": "assets/Shop/ic_30.png",
 			"type": "image",
-			"url": "assets/Shop/ic_30.png"
+			"name": "ic_30_png"
 		},
 		{
-			"name": "ic_60_png",
+			"url": "assets/Shop/ic_60.png",
 			"type": "image",
-			"url": "assets/Shop/ic_60.png"
+			"name": "ic_60_png"
 		},
 		{
-			"name": "ic_buy_png",
+			"url": "assets/Shop/ic_buy.png",
 			"type": "image",
-			"url": "assets/Shop/ic_buy.png"
+			"name": "ic_buy_png"
 		},
 		{
-			"name": "ic_coin_shop_png",
+			"url": "assets/Shop/ic_coin_shop.png",
 			"type": "image",
-			"url": "assets/Shop/ic_coin_shop.png"
+			"name": "ic_coin_shop_png"
 		},
 		{
-			"name": "ic_menu_png",
+			"url": "assets/Shop/ic_menu.png",
 			"type": "image",
-			"url": "assets/Shop/ic_menu.png"
+			"name": "ic_menu_png"
 		},
 		{
-			"name": "ic_tag_select_png",
+			"url": "assets/Shop/ic_tag_select.png",
 			"type": "image",
-			"url": "assets/Shop/ic_tag_select.png"
+			"name": "ic_tag_select_png"
 		},
 		{
-			"name": "ic_tag_png",
+			"url": "assets/Shop/ic_tag.png",
 			"type": "image",
-			"url": "assets/Shop/ic_tag.png"
+			"name": "ic_tag_png"
 		},
 		{
-			"name": "ic_blank_png",
+			"url": "assets/Main/ic_blank.png",
 			"type": "image",
-			"url": "assets/Main/ic_blank.png"
+			"name": "ic_blank_png"
 		},
 		{
-			"name": "ic_left_png",
+			"url": "assets/Main/ic_left.png",
 			"type": "image",
-			"url": "assets/Main/ic_left.png"
+			"name": "ic_left_png"
 		},
 		{
-			"name": "ic_right_png",
+			"url": "assets/Main/ic_right.png",
 			"type": "image",
-			"url": "assets/Main/ic_right.png"
+			"name": "ic_right_png"
 		},
 		{
-			"name": "handbook_1_jpg",
+			"url": "assets/Shop/bg_prop.png",
 			"type": "image",
-			"url": "assets/Handbooks/handbook_1.jpg"
+			"name": "bg_prop_png"
 		},
 		{
-			"name": "handbook_2_jpg",
+			"url": "assets/ic_playAgain_press.png",
 			"type": "image",
-			"url": "assets/Handbooks/handbook_2.jpg"
+			"name": "ic_playAgain_press_png"
 		},
 		{
-			"name": "handbook_3_jpg",
+			"url": "assets/Main/ic_start_press.png",
 			"type": "image",
-			"url": "assets/Handbooks/handbook_3.jpg"
+			"name": "ic_start_press_png"
 		},
 		{
-			"name": "handbook_4_jpg",
+			"url": "assets/Main/frogBg.png",
 			"type": "image",
-			"url": "assets/Handbooks/handbook_4.jpg"
+			"name": "frogBg_png"
 		},
 		{
-			"name": "handbook_5_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_5.jpg"
-		},
-		{
-			"name": "handbook_6_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_6.jpg"
-		},
-		{
-			"name": "handbook_7_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_7.jpg"
-		},
-		{
-			"name": "handbook_8_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_8.jpg"
-		},
-		{
-			"name": "handbook_9_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_9.jpg"
-		},
-		{
-			"name": "handbook_10_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_10.jpg"
-		},
-		{
-			"name": "handbook_11_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_11.jpg"
-		},
-		{
-			"name": "handbook_12_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_12.jpg"
-		},
-		{
-			"name": "handbook_13_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_13.jpg"
-		},
-		{
-			"name": "handbook_14_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_14.jpg"
-		},
-		{
-			"name": "handbook_15_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_15.jpg"
-		},
-		{
-			"name": "handbook_16_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_16.jpg"
-		},
-		{
-			"name": "handbook_17_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_17.jpg"
-		},
-		{
-			"name": "handbook_18_jpg",
-			"type": "image",
-			"url": "assets/Handbooks/handbook_18.jpg"
-		},
-		{
-			"name": "bg_prop_png",
-			"type": "image",
-			"url": "assets/Shop/bg_prop.png"
-		},
-		{
-			"name": "ic_playAgain_press_png",
-			"type": "image",
-			"url": "assets/ic_playAgain_press.png"
-		},
-		{
-			"name": "ic_start_press_png",
-			"type": "image",
-			"url": "assets/Main/ic_start_press.png"
-		},
-		{
-			"name": "frogBg_png",
-			"type": "image",
-			"url": "assets/Main/frogBg.png"
-		},
-		{
-			"name": "frogBg_json",
+			"url": "assets/Main/frogBg.json",
 			"type": "json",
-			"url": "assets/Main/frogBg.json"
+			"name": "frogBg_json"
 		},
 		{
-			"name": "loading_json",
+			"url": "assets/Shop/loading.json",
 			"type": "json",
-			"url": "assets/Shop/loading.json"
+			"name": "loading_json"
 		},
 		{
-			"name": "loading_png",
+			"url": "assets/Shop/loading.png",
 			"type": "image",
-			"url": "assets/Shop/loading.png"
+			"name": "loading_png"
 		},
 		{
-			"name": "ic_1_press_png",
+			"url": "assets/Shop/ic_1_press.png",
 			"type": "image",
-			"url": "assets/Shop/ic_1_press.png"
+			"name": "ic_1_press_png"
 		},
 		{
-			"name": "ic_6_press_png",
+			"url": "assets/Shop/ic_6_press.png",
 			"type": "image",
-			"url": "assets/Shop/ic_6_press.png"
+			"name": "ic_6_press_png"
 		},
 		{
-			"name": "ic_30_press_png",
+			"url": "assets/Shop/ic_30_press.png",
 			"type": "image",
-			"url": "assets/Shop/ic_30_press.png"
+			"name": "ic_30_press_png"
 		},
 		{
-			"name": "ic_购买_press_png",
+			"url": "assets/Shop/ic_购买_press.png",
 			"type": "image",
-			"url": "assets/Shop/ic_购买_press.png"
+			"name": "ic_购买_press_png"
 		},
 		{
-			"name": "ic_menu_press_png",
+			"url": "assets/Shop/ic_menu_press.png",
 			"type": "image",
-			"url": "assets/Shop/ic_menu_press.png"
+			"name": "ic_menu_press_png"
 		},
 		{
-			"name": "ic_home_press_png",
+			"url": "assets/Main/ic_home_press.png",
 			"type": "image",
-			"url": "assets/Main/ic_home_press.png"
+			"name": "ic_home_press_png"
 		},
 		{
-			"name": "ic_pictures_press_png",
+			"url": "assets/Main/ic_pictures_press.png",
 			"type": "image",
-			"url": "assets/Main/ic_pictures_press.png"
+			"name": "ic_pictures_press_png"
 		},
 		{
-			"name": "ic_rank_press_png",
+			"url": "assets/Main/ic_rank_press.png",
 			"type": "image",
-			"url": "assets/Main/ic_rank_press.png"
+			"name": "ic_rank_press_png"
 		},
 		{
-			"name": "ic_shop_press_png",
+			"url": "assets/Main/ic_shop_press.png",
 			"type": "image",
-			"url": "assets/Main/ic_shop_press.png"
+			"name": "ic_shop_press_png"
 		},
 		{
-			"name": "ic_60_press_png",
+			"url": "assets/Shop/ic_60_press.png",
 			"type": "image",
-			"url": "assets/Shop/ic_60_press.png"
+			"name": "ic_60_press_png"
 		},
 		{
-			"name": "ic_buy_press_png",
+			"url": "assets/Shop/ic_buy_press.png",
 			"type": "image",
-			"url": "assets/Shop/ic_buy_press.png"
+			"name": "ic_buy_press_png"
 		},
 		{
-			"name": "resurgence_no_png",
+			"url": "assets/resurgence_no.png",
 			"type": "image",
-			"url": "assets/resurgence_no.png"
+			"name": "resurgence_no_png"
 		},
 		{
-			"name": "resurgence_yes_png",
+			"url": "assets/resurgence_yes.png",
 			"type": "image",
-			"url": "assets/resurgence_yes.png"
+			"name": "resurgence_yes_png"
 		},
 		{
-			"name": "resurgence_frame_png",
+			"url": "assets/resurgence_frame.png",
 			"type": "image",
-			"url": "assets/resurgence_frame.png"
+			"name": "resurgence_frame_png"
 		},
 		{
-			"name": "resurgence_shop_png",
+			"url": "assets/Shop/resurgence_shop.png",
 			"type": "image",
-			"url": "assets/Shop/resurgence_shop.png"
+			"name": "resurgence_shop_png"
+		},
+		{
+			"url": "assets/Handbooks/handbook_1.jpg",
+			"type": "image",
+			"name": "handbook_1_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_10.jpg",
+			"type": "image",
+			"name": "handbook_10_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_11.jpg",
+			"type": "image",
+			"name": "handbook_11_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_12.jpg",
+			"type": "image",
+			"name": "handbook_12_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_13.jpg",
+			"type": "image",
+			"name": "handbook_13_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_14.jpg",
+			"type": "image",
+			"name": "handbook_14_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_15.jpg",
+			"type": "image",
+			"name": "handbook_15_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_16.jpg",
+			"type": "image",
+			"name": "handbook_16_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_17.jpg",
+			"type": "image",
+			"name": "handbook_17_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_18.jpg",
+			"type": "image",
+			"name": "handbook_18_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_2.jpg",
+			"type": "image",
+			"name": "handbook_2_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_3.jpg",
+			"type": "image",
+			"name": "handbook_3_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_4.jpg",
+			"type": "image",
+			"name": "handbook_4_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_5.jpg",
+			"type": "image",
+			"name": "handbook_5_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_6.jpg",
+			"type": "image",
+			"name": "handbook_6_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_7.jpg",
+			"type": "image",
+			"name": "handbook_7_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_8.jpg",
+			"type": "image",
+			"name": "handbook_8_jpg"
+		},
+		{
+			"url": "assets/Handbooks/handbook_9.jpg",
+			"type": "image",
+			"name": "handbook_9_jpg"
 		}
 	]
 }

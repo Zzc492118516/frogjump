@@ -9805,10 +9805,7 @@ var egret;
                 alpha = +alpha || 0;
                 miterLimit = +miterLimit || 0;
                 this.setStrokeWidth(thickness);
-                this.strokePath = this.$renderNode.lineStyle(thickness, color, alpha, caps, joints, miterLimit);
-                if (lineDash) {
-                    this.strokePath.setLineDash(lineDash);
-                }
+                this.strokePath = this.$renderNode.lineStyle(thickness, color, alpha, caps, joints, miterLimit, lineDash);
                 if (this.$renderNode.drawData.length > 1) {
                     this.strokePath.moveTo(this.lastX, this.lastY);
                 }
@@ -14582,9 +14579,10 @@ var egret;
              * @param joints 指定用于拐角的连接外观的类型。默认值：JointStyle.ROUND
              * @param miterLimit 用于表示剪切斜接的极限值的数字。
              */
-            GraphicsNode.prototype.lineStyle = function (thickness, color, alpha, caps, joints, miterLimit) {
+            GraphicsNode.prototype.lineStyle = function (thickness, color, alpha, caps, joints, miterLimit, lineDash) {
                 if (alpha === void 0) { alpha = 1; }
                 if (miterLimit === void 0) { miterLimit = 3; }
+                if (lineDash === void 0) { lineDash = []; }
                 if (CAPS_STYLES.indexOf(caps) == -1) {
                     caps = "round";
                 }
@@ -14598,6 +14596,7 @@ var egret;
                 path.caps = caps || egret.CapsStyle.ROUND;
                 path.joints = joints;
                 path.miterLimit = miterLimit;
+                path.lineDash = lineDash;
                 this.drawData.push(path);
                 this.renderCount++;
                 return path;
@@ -15426,12 +15425,6 @@ var egret;
                 _this.type = 3 /* Stroke */;
                 return _this;
             }
-            StrokePath.prototype.setLineDash = function (segments) {
-                this.$commands[this.commandPosition++] = 5 /* SetLineDash */;
-                var pos = this.dataPosition;
-                this.$data[pos++] = segments;
-                this.dataPosition = pos;
-            };
             return StrokePath;
         }(sys.Path2D));
         sys.StrokePath = StrokePath;
@@ -16143,6 +16136,9 @@ var egret;
                         context.lineCap = CAPS_STYLES[strokeFill.caps];
                         context.lineJoin = strokeFill.joints;
                         context.miterLimit = strokeFill.miterLimit;
+                        if (context.setLineDash) {
+                            context.setLineDash(strokeFill.lineDash);
+                        }
                         //对1像素和3像素特殊处理，向右下角偏移0.5像素，以显示清晰锐利的线条。
                         var isSpecialCaseWidth = lineWidth === 1 || lineWidth === 3;
                         if (isSpecialCaseWidth) {
@@ -16178,9 +16174,6 @@ var egret;
                         break;
                     case 1 /* MoveTo */:
                         context.moveTo(data[pos++] + context.$offsetX, data[pos++] + context.$offsetY);
-                        break;
-                    case 5 /* SetLineDash */:
-                        context.setLineDash(data[pos++]);
                         break;
                 }
             }
@@ -16900,7 +16893,7 @@ var egret;
          * @platform Web,Native
          * @language zh_CN
          */
-        Capabilities.engineVersion = "5.1.5";
+        Capabilities.engineVersion = "5.1.6";
         /***
          * current render mode.
          * @type {string}
@@ -18804,23 +18797,6 @@ var egret;
                 this.updateInput();
                 return;
             }
-            var stage = this._text.$stage;
-            if (stage == null) {
-            }
-            else {
-                var item = this._text;
-                var visible = item.$visible;
-                while (true) {
-                    if (!visible) {
-                        break;
-                    }
-                    item = item.parent;
-                    if (item == stage) {
-                        break;
-                    }
-                    visible = item.$visible;
-                }
-            }
             this.stageText.$setText(this._text.$TextField[13 /* text */]);
             //整体修改
             this.stageText.$resetStageText();
@@ -19465,6 +19441,9 @@ var egret;
         TextField.prototype.$setBaseText = function (value) {
             if (value == null) {
                 value = "";
+            }
+            else {
+                value = value.toString();
             }
             this.isFlow = false;
             var values = this.$TextField;

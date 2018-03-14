@@ -47,6 +47,7 @@ class Main extends eui.UILayer {
 
         //inject the custom material parser
         //注入自定义的素材解析器
+         egret.ImageLoader.crossOrigin = "anonymous";
         let assetAdapter = new AssetAdapter();
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
@@ -61,9 +62,9 @@ class Main extends eui.UILayer {
         await this.loadResource()
         // const result = await RES.getResAsync("description_json")
         // this.startAnimation(result);
-        // await platform.login();
-        // const userInfo = await platform.getUserInfo();
-        // console.log(userInfo);
+        await platform.login();
+        const userInfo = await platform.getUserInfo();
+        console.log(userInfo);
 
         if (egret.Capabilities.runtimeType == egret.RuntimeType.WEB) {
             // 模拟器用
@@ -84,7 +85,8 @@ class Main extends eui.UILayer {
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
-            await RES.loadConfig("resource/default.res.json", "resource/");
+            await RES.loadConfig("default.res.json", "resource/");
+            // await RES.loadConfig("default.res.json", "http://sgame.51changmi.cn/tiaotiao/resource/");
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
             this.stage.removeChild(loadingView);
