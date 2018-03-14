@@ -99,9 +99,9 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 		this.coinLabel.addEventListener(egret.TouchEvent.TOUCH_TAP,this.tapCoin,this);
 
 		// 设置参数
-		this.picturesName = ["000001_jpg","000002_jpg","000003_jpg","000004_jpg","000005_jpg","000006_jpg","000007_jpg",
-		"000008_jpg","000009_jpg","000010_jpg","000011_jpg","000012_jpg","000013_jpg","000014_jpg","000015_jpg","000016_jpg",
-		"000017_jpg","000018_jpg"];
+		this.picturesName = ["handbook_1_jpg","handbook_2_jpg","handbook_3_jpg","handbook_4_jpg","handbook_5_jpg","handbook_6_jpg",
+		"handbook_7_jpg","handbook_8_jpg","handbook_9_jpg","handbook_10_jpg","handbook_11_jpg","handbook_12_jpg","handbook_13_jpg",
+		"handbook_14_jpg","handbook_15_jpg","handbook_16_jpg","handbook_17_jpg","handbook_18_jpg"];
 		this.picScoreArray = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900];
 		this.picturesMaxPaper = Math.floor(this.picturesName.length / 3);
 
