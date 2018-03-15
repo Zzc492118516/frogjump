@@ -171,7 +171,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
         }, this);
 	}
 	private tapHome(){
-
+		PanelUtils.getInstance().showDialog("敬请期待");
 	}
 	private tapPictures(){
 		// 设置页数为1
@@ -207,7 +207,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	}
 	private tapUser(){
 		// 切换状态
-		this.skin.currentState = "userInfo";
+		// this.skin.currentState = "userInfo";
 	}
 	private tapStrenth(){
 
@@ -235,7 +235,8 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	}
 	private tapHomeRank(){
 		// 切换状态
-		this.skin.currentState = "homeRank";
+		// this.skin.currentState = "homeRank";
+		PanelUtils.getInstance().showDialog("敬请期待");
 	}
 	private addFrogBg(){
 		var data = RES.getRes("frogBg_json");
