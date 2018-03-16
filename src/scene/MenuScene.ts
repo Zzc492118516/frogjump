@@ -154,9 +154,14 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 			let strenthNumStr: string = this.strenthNumLabel.text;
 			this.strenthNumLabel.text = (parseInt(strenthNumStr) + 1) + "";
 			minute = 89;
+			if (parseInt(this.strenthNumLabel.text) == 5) {
+				this.strenthTimer.stop();
+			}
 		}
 		str = minute + ":" + (second >= 10 ? second : "0" + second);
 		this.strenthTimeLabel.text = str;
+
+		
 	}
 	private tapHandler(){
 		// 切换场景
@@ -171,7 +176,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
         }, this);
 	}
 	private tapHome(){
-
+		PanelUtils.getInstance().showDialog("敬请期待");
 	}
 	private tapPictures(){
 		// 设置页数为1
@@ -207,7 +212,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	}
 	private tapUser(){
 		// 切换状态
-		this.skin.currentState = "userInfo";
+		// this.skin.currentState = "userInfo";
 	}
 	private tapStrenth(){
 
@@ -235,7 +240,8 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	}
 	private tapHomeRank(){
 		// 切换状态
-		this.skin.currentState = "homeRank";
+		// this.skin.currentState = "homeRank";
+		PanelUtils.getInstance().showDialog("敬请期待");
 	}
 	private addFrogBg(){
 		var data = RES.getRes("frogBg_json");
