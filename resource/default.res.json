@@ -7,11 +7,6 @@
 	],
 	"resources": [
 		{
-			"url": "assets/bg.jpg",
-			"type": "image",
-			"name": "bg_jpg"
-		},
-		{
 			"url": "assets/egret_icon.png",
 			"type": "image",
 			"name": "egret_icon_png"
@@ -462,9 +457,9 @@
 			"name": "handbook_9_jpg"
 		},
 		{
-			"name": "piece01_png",
+			"url": "assets/piece01.png",
 			"type": "image",
-			"url": "assets/piece01.png"
+			"name": "piece01_png"
 		}
 	]
 }

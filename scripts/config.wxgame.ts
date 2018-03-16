@@ -21,24 +21,24 @@ const config: ResourceManagerConfig = {
                     new CompilePlugin({ libraryType: "debug", defines: { DEBUG: true, RELEASE: false } }),
                     new ExmlPlugin('commonjs'), // 非 EUI 项目关闭此设置
                     new WxgamePlugin(),
-                    new RenamePlugin({
-                        verbose: true, hash: "crc32", matchers: [{
-                            from: "resource/**/**",
-                            to: "[path][name]_[hash].[ext]"
-                        }]
-                    }),
-                    new ResSplitPlugin({
-                        verbose: true, matchers: [{
-                            from: "resource/**/**.jpg",
-                            to: `${projectName}_wxgame_remote`
-                        }]
-                    }),
-                    new EmitResConfigFilePlugin({
-                        output: "resource/default.res.json",
-                        typeSelector: config.typeSelector,
-                        nameSelector: p => path.basename(p).replace(/\./gi, "_"),
-                        groupSelector: p => "preload"
-                    }),
+                    // new RenamePlugin({
+                    //     verbose: true, hash: "crc32", matchers: [{
+                    //         from: "resource/**/**",
+                    //         to: "[path][name]_[hash].[ext]"
+                    //     }]
+                    // }),
+                    // new ResSplitPlugin({
+                    //     verbose: true, matchers: [{
+                    //         from: "resource/**/**.jpg",
+                    //         to: `${projectName}_wxgame_remote`
+                    //     }]
+                    // }),
+                    // new EmitResConfigFilePlugin({
+                    //     output: "resource/default.res.json",
+                    //     typeSelector: config.typeSelector,
+                    //     nameSelector: p => path.basename(p).replace(/\./gi, "_"),
+                    //     groupSelector: p => "preload"
+                    // }),
                     new ManifestPlugin({ output: 'manifest.js' })
                 ]
             }
