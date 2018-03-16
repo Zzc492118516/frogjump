@@ -21,10 +21,6 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 	public rmb30Btn: eui.Button;
 	public rmb60Btn: eui.Button;
 
-	// loading背景
-	public loadingBg: eui.Rect;
-	private loadingMovieClip: egret.MovieClip;
-
 	public constructor() {
 		super();
 		// 设置入场刷新金币数
@@ -116,23 +112,5 @@ class ShopScene extends eui.Component implements eui.UIComponent {
 	}
 	private buyLiushiRmb() {
 		egret.ExternalInterface.call("gotoPay", "10004,60");
-	}
-	private connectLoading() {
-		this.loadingBg.visible = true;
-		if (!this.loadingMovieClip) {
-			var data = RES.getRes("loading_json");
-			var tex = RES.getRes("loading_png");
-			var mcf:egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data,tex);
-			this.loadingMovieClip = new egret.MovieClip(mcf.generateMovieClipData());
-			this.loadingMovieClip.x = 300;
-			this.loadingMovieClip.y = 592;
-		}
-		this.addChild(this.loadingMovieClip);
-		this.loadingMovieClip.gotoAndPlay(0,-1);
-	}
-	private connectComplete() {
-		this.loadingBg.visible = false;
-		this.loadingMovieClip.stop();
-		this.removeChild(this.loadingMovieClip);
 	}
 }

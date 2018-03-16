@@ -154,9 +154,14 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 			let strenthNumStr: string = this.strenthNumLabel.text;
 			this.strenthNumLabel.text = (parseInt(strenthNumStr) + 1) + "";
 			minute = 89;
+			if (parseInt(this.strenthNumLabel.text) == 5) {
+				this.strenthTimer.stop();
+			}
 		}
 		str = minute + ":" + (second >= 10 ? second : "0" + second);
 		this.strenthTimeLabel.text = str;
+
+		
 	}
 	private tapHandler(){
 		// 切换场景
