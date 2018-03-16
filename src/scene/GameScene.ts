@@ -81,6 +81,8 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	private blockArr: Array<eui.Image> = [];
 	// 所有回收方块的数组
 	private reBackBlockArr: Array<eui.Image> = [];
+	// 图鉴解锁所需分数数组
+	private picScoreArray:Array<number>;
 	// 判断是否是按下状态
 	private isReadyJump = false;
 	// 落脚点
@@ -109,6 +111,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	private init() {
 		this.blockSourceNames = ["block-1_png", "block-2_png", "block-3_png", "block-4_png"];
 		this.blockScore = [1, 1, 1, 2];
+		this.picScoreArray = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900];
 		// 初始化音频
 		this.pushVoice = RES.getRes('push_mp3');
 		this.jumpVoice = RES.getRes('jump_mp3');
@@ -347,6 +350,16 @@ class GameScene extends eui.Component implements eui.UIComponent {
 				this.overPanel.visible = true;
 				this.overScoreLabel.text = this.score.toString();
 				this.highestLabel.text = "历史最高：" + response.data;
+				for (var i = 0; i < this.picScoreArray.length; i++) {
+					if (response.data < this.picScoreArray[i]) {
+						break;
+					}
+					if (response.data >= this.picScoreArray[i] && UserUtils.getInstance().getOwnUser().userMark < this.picScoreArray[i]) {
+						PanelUtils.getInstance().showDialog("妈耶！解锁图鉴了！");
+						break;
+					}
+					
+				}
 			}else {
 				
 			}
