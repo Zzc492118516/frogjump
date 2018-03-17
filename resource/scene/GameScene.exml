@@ -28,7 +28,7 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="查看你的排名" x="188" y="926">
+		<e:Button id="yourRankBtn" label="查看你的排名" x="188" y="926">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="ic_yourRank_png" source.down="ic_yourRank_png"/>

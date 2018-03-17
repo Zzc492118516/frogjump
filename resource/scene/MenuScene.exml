@@ -111,7 +111,7 @@
 		<e:Rect width="110" height="4" x="174" y="185" fillColor="0xffffff" anchorOffsetX="0" anchorOffsetY="0" visible.homeRank="false"/>
 		<e:Rect width="110" height="4" x="460" y="185" fillColor="0xFFFFFF" anchorOffsetX="0" anchorOffsetY="0" visible.scoreRank="false"/>
 		<e:List id="rankList" width="532" height="795" x="111" y="234" anchorOffsetX="0" anchorOffsetY="0" itemRendererSkinName="RankOneSkin"/>
-		<e:Label text="您的排名未上榜" x="271.5" y="1095" textAlign="center"/>
+		<e:Label id="rankLabel" text="您的排名未上榜" x="271.5" y="1095" textAlign="center"/>
 	</e:Group>
 	<e:Group id="handbookGroup" width="750" height="1334" x="0" y="0" visible.userInfo="false" visible.main="false" visible.scoreRank="false" visible.homeRank="false">
 		<e:Rect width="750" height="1334" x="0" y="0" strokeAlpha="1" fillAlpha="0.5" scaleX="1" scaleY="1"/>

@@ -23,6 +23,9 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 	public scoreRankLabel:eui.Label;
 	public homeRankLabel:eui.Label;
 
+	// 你的排名
+	public rankLabel:eui.Label;
+
 	// 排行的列表
 	public rankList:eui.List;
 
@@ -201,6 +204,7 @@ class MenuScene extends eui.Component implements  eui.UIComponent {
 			if (response.code == "1"){
 				this.rankList.dataProvider = new eui.ArrayCollection(response.data);
 				this.rankList.itemRenderer = RankOne;
+				this.rankLabel.text = "你的排名是" + (response.ranking > 999 ? "999" : response.ranking) + "名";
 			}else {
 				
 			}

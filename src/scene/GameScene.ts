@@ -30,6 +30,8 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	public overScoreLabel: eui.Label;
 	// 游戏结束最高分面板
 	public highestLabel: eui.Label;
+	// 你的排名
+	public yourRankBtn: eui.Button;
 	// 再来一局
 	public restart: eui.Button;
 	// 返回菜单
@@ -338,6 +340,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			if (response.code == "1"){
 				this.rankList.dataProvider = new eui.ArrayCollection(response.data);
 				this.rankList.itemRenderer = RankOne;
+				this.yourRankBtn.label = "你的排名是" + (response.ranking > 999 ? "999" : response.ranking) + "名";
 			}else {
 				
 			}
