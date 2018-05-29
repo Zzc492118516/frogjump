@@ -8,11 +8,11 @@
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
-		"resource/item_skins/DialogSkin.exml",
-		"resource/item_skins/RankOneSkin.exml",
 		"resource/scene/GameScene.exml",
 		"resource/scene/MenuScene.exml",
-		"resource/scene/ShopScene.exml"
+		"resource/scene/ShopScene.exml",
+		"resource/item_skins/DialogSkin.exml",
+		"resource/item_skins/RankOneSkin.exml"
 	],
 	"path": "resource/default.thm.json"
 }

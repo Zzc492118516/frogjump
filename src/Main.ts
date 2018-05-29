@@ -68,7 +68,7 @@ class Main extends eui.UILayer {
 
         if (egret.Capabilities.runtimeType == egret.RuntimeType.WEB) {
             // 模拟器用
-            egret.localStorage.setItem("username", "wenwen");
+            egret.localStorage.setItem("username", "255c08b2fc1a3f58");
             this.createGameScene();
         }
         // 真机用
